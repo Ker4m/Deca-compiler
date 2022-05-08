@@ -1,0 +1,17 @@
+// Description:
+//    Programme valide ayant pour but de tester if et else.
+//
+// Resultats:
+//    c=true;
+
+{
+    int a = 2;
+    boolean c;
+
+    if(a!=2){
+        c=false;
+    }
+    else{
+        c=true;
+    }
+}

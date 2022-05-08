@@ -1,0 +1,10 @@
+// Programme validant l'affectation à un élement du tableau
+
+{
+    int[5, 5] mat;
+    float[3, 8] mat2;
+    mat[1, 1] = 7;
+    mat2[2, 6] = 2.99;
+    println(mat[1, 1]);
+    print(mat2[2, 6]);
+}

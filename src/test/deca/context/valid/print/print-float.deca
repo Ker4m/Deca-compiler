@@ -1,0 +1,11 @@
+// Description:
+//    Programme minimaliste utilisant print.
+//
+// Resultats:
+//    2.3
+
+{
+    float a;
+    a = 2.3;
+    print(a);
+}

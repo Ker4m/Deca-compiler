@@ -1,0 +1,10 @@
+// Description:
+//    Programme valide ayant pour but de tester l'egalite logique.
+//
+// Resultats:
+//    c=true;
+
+{
+    int a = 2;
+    boolean c = (a == 2);
+}

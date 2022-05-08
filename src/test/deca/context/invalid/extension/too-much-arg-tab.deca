@@ -1,0 +1,7 @@
+// Programme testant de déclarer une matrice avec plus de 2 arguments
+
+// Error at line 6
+
+{
+    int[1, 2, 3, 4] tab;
+}

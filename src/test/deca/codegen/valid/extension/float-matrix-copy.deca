@@ -1,0 +1,26 @@
+#include "NumDeca.decah"
+
+{
+    MatrixSet ms = new MatrixSet();
+    MatrixUtils mu = new MatrixUtils();
+    float[5,5] matrix;
+    float[5,5] matrix2;
+
+    ms.floatSetIdentity(matrix);
+
+    ms.floatSetZero(matrix2);
+
+    if(mu.floatMatrixEqual(matrix, matrix2)){
+        println("true");
+    } else {
+        println("false");
+    }
+
+    mu.floatMatrixCopy(matrix, matrix2);
+
+    if(mu.floatMatrixEqual(matrix, matrix2)){
+        print("true");
+    } else {
+        print("false");
+    }
+}

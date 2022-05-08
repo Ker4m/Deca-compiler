@@ -1,0 +1,10 @@
+// Description:
+//    Programme minimaliste d'un booleen comme parametre de printlx.
+//
+// Resultats:
+//    Erreur ligne 9
+
+{
+    boolean a = true;
+    printlnx(a);
+}

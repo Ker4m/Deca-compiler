@@ -1,0 +1,9 @@
+// Description:
+//    Affectation d'un entier.
+//
+// Resultats:
+//    a = 3
+
+{
+    int a = 3;
+}

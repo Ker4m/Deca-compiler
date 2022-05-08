@@ -1,0 +1,12 @@
+{
+    boolean b = true;
+
+    while(b){
+        println("ok");
+        b=false;
+    }
+
+    while(!true){
+        println("erreue");
+    }
+}

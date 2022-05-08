@@ -1,0 +1,16 @@
+// Description:
+//    Programme valide ne contenant une classe à un attribut et une methode.
+//    Heritage.
+//
+// Resultats:
+//    classe B herite de A
+
+class A{
+    int a;
+
+    void printA(){
+        println(this.a);
+    }
+}
+
+class B extends A{}

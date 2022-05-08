@@ -1,0 +1,9 @@
+// Description:
+//    Programme invalide testant le cast simple.
+//
+// Resultats:
+//    erreur syntax ligne 8
+
+{
+    float a = (float) 2;
+}

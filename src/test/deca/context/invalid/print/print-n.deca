@@ -1,0 +1,9 @@
+// Description:
+//    Programme minimaliste utilisant print.
+//
+// Resultats:
+//    erreur ligne 8
+
+{
+    print("\n");
+}

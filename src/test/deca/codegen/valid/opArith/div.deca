@@ -1,0 +1,5 @@
+{
+    int a = 3/3;
+    println(a);
+    println(a/0.5);
+}

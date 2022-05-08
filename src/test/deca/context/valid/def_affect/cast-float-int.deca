@@ -1,0 +1,10 @@
+// Description:
+//    Cast valide.
+//
+// Resultats:
+//    a = 2
+
+{
+    float a;
+    a = 2;
+}

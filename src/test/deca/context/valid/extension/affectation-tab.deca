@@ -1,0 +1,7 @@
+// Programme validant l'affection à un élement de la matrice
+
+{
+    float[2] tab;
+    tab[1] = 43;
+    print(tab[1]);
+}

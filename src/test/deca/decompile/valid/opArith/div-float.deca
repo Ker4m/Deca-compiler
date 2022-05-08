@@ -1,0 +1,9 @@
+// Description:
+//    Programme valide ayant pour but de tester la division avec un flottant.
+//
+// Resultats:
+//    c=4;
+
+{
+    float c = 2/0.5;
+}

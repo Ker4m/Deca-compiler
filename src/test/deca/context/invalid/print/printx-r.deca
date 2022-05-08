@@ -1,0 +1,9 @@
+// Description:
+//    Programme minimaliste utilisant printx.
+//
+// Resultats:
+//    erreur ligne 8
+
+{
+    printx("\r");
+}

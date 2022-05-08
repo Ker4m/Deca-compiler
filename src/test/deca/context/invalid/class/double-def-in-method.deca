@@ -1,0 +1,8 @@
+// Programme testant la double définition à l'intérieur d'une méthode
+
+class A {
+    void method() {
+        int i;
+        float i;
+    }
+}

@@ -1,0 +1,57 @@
+// Test testant un programme complexe
+
+
+class A {}
+
+class B extends A {}
+
+class C extends A {
+    protected int i;
+    protected float j;
+    int k;
+    float l;
+
+    void doNothing() {
+        ;
+    }
+}
+
+class D extends C {
+
+    void setAll() {
+        i = 2;
+        this.j = i * 2;
+        print(getI());
+        l = - 2 * 3.2 + 1%2 - 4 / 1.2 / 2;
+        if (i < j && j > k || l < i && i == j || k != l) {
+            printlnx("youhou", "je", this.getI(), "");
+            printx("");
+        } else {
+            doNothing();
+        }
+    }
+
+    int getI() {
+        return this.i;
+    }
+}
+
+{
+    D d = new D();
+    boolean bool = true;
+    int m = readInt();
+    C c = (C) (d);
+
+    while (d instanceof B) {
+
+    }
+
+    bool = false;
+
+    if (!bool) {
+        d.setAll();
+    }
+
+    c.doNothing();
+
+}

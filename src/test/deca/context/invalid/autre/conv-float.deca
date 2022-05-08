@@ -1,0 +1,5 @@
+// Programme testant que ConvFloat ne marche pas avec un booleen
+
+{
+    float i = true;
+}

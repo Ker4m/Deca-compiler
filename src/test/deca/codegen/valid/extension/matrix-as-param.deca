@@ -1,0 +1,15 @@
+class Test {
+
+    void test(int[] tab){
+        tab[1,1] = 77;
+        println(tab[1,1]);
+    }
+
+}
+
+{
+    Test t = new Test();
+    int[5,5] sf;
+    t.test(sf);
+    print(sf[1,1]);
+}

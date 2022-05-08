@@ -1,0 +1,14 @@
+// Description:
+//    Programme valide ayant pour but de tester le if.
+//
+// Resultats:
+//    c=true;
+
+{
+    int a = 2;
+    boolean c = false;
+
+    if(a==2){
+        c=true;
+    }
+}

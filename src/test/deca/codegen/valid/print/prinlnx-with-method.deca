@@ -1,0 +1,13 @@
+// Programme testant l'affichage d'un flottant en hexa depuis une méthode
+
+class A {
+    float method() {
+        return 7.2;
+    }
+}
+
+{
+    A a = new A();
+    printlnx(a.method());
+    printx(a.method() + 0);
+}

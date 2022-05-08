@@ -1,0 +1,9 @@
+// Description:
+//    Test invalide du parser.
+//
+// Resultats:
+//    erreur ligne 8
+
+{
+    float a = 43656982143364531434768764432233686543223456785234567324674325623456.32456;
+}

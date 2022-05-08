@@ -1,0 +1,9 @@
+// Programme testant le print d'une matrice
+
+{
+    float[7] tab;
+    tab[1] = 2.7;
+    tab[2] = 2.3;
+    println(tab[1]);
+    printx(tab[2]);
+}

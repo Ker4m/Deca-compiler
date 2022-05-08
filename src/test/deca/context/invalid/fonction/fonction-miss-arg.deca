@@ -1,0 +1,15 @@
+// Description:
+//    Programme invalide ayant pour but de tester les fonctions.
+//
+// Resultats:
+//    erreur ligne 14, missing arg.
+
+class MaClasse{
+    void test(int a){
+        print(a);
+    }
+}
+
+{
+    new MaClasse().test();
+}

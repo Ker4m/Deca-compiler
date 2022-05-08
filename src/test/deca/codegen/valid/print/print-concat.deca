@@ -1,0 +1,9 @@
+// Affichage de Hello 1 et Hi 1.5
+
+{
+    int a = 1;
+    float b = 1.5;
+
+    println("Hello ", a);
+    println("Hi ", b);
+}

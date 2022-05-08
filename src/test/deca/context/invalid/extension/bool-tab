@@ -1,0 +1,7 @@
+// Declaration of a matrix with wrong type
+
+// Error at line 6
+
+{
+    boolean[1,2] tab;
+}

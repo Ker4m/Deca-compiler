@@ -1,0 +1,17 @@
+// Description:
+//    Programme valide ayant pour but de tester les fonctions.
+//
+// Resultats:
+//    a = 2
+
+class MaClasse{
+    int test(){
+        return 2;
+    }
+}
+
+{
+	MaClasse mc = new MaClasse();
+    int a = mc.test();
+    println(a);
+}

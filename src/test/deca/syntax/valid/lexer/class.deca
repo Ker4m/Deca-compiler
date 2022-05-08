@@ -1,0 +1,7 @@
+// Description:
+//    Programme valide ne contenant qu'une classe vide.
+//
+// Resultats:
+//    class A
+
+class A{}

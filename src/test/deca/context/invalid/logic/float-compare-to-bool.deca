@@ -1,0 +1,5 @@
+// Programme testant un float supérieur à un booléen
+
+{
+    if (2.7 < true) {}
+}

@@ -1,0 +1,10 @@
+// Description:
+//    Programme invalide ayant pour but de tester la double declaration.
+//
+// Resultats:
+//    erreur ligne 9
+
+{
+    int a = 1;
+    int a = 2;
+}

@@ -1,0 +1,6 @@
+// Programme validant l'accès à un élement d'un tableau
+
+{
+    int[2] tab;
+    print(tab[1]);
+}

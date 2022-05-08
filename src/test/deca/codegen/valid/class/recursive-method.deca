@@ -1,0 +1,23 @@
+// Description : test the usage of a method using a recusive fonction (fact in this case)
+
+// Result :
+// 120
+//
+
+class Test {
+    int x = 5;
+
+    int doRecursive(int n){
+        if(n == 0){
+            return 1;
+        } else {
+            return doRecursive(n-1)*n;
+        }
+    }
+}
+
+{
+    Test t = new Test();
+    println(t.doRecursive(t.x));
+
+}

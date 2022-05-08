@@ -1,0 +1,14 @@
+// Description:
+//    Programme minimaliste testant le cast entre classe.
+//
+// Resultats:
+//    erreur ligne 13
+
+class A{}
+
+class B{}
+
+{
+    B b = new B();
+    A a = (A) (b);
+}

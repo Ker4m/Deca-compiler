@@ -1,0 +1,22 @@
+{
+    int unEntier, un_autre_entier;
+
+    int a = 1, b = 5, c = 7;
+
+    int d;
+
+    d = b + c; // 5 + 7 = 12
+    println("d = ", d);
+    //  1*12+ 2*5 - 7/7 = 21
+    d = a*d + 2*b - c/7;
+    println("d = ", d);
+    d = d%d;
+    println("d = ", d);
+
+
+    print("Saisissez un entier : ");
+    d = readInt();
+    print("On ajoute 3 et cela donne : ");
+    println(d + 3);
+
+}

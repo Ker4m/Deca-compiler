@@ -1,0 +1,34 @@
+{
+    int a = 1;
+    int b = 1;
+
+    if(a < (b + 1)){
+        println("ok");
+    }
+    else{
+        println("erreur");
+    }
+
+    b=b+1;
+
+    if(a > b){
+        println("erreur");
+    }
+    else{
+        println("ok");
+    }
+    
+    if(a >= (b-1)){
+        println("ok");
+    }
+    else{
+        println("erreur");
+    }
+
+    if((a+1) <= b){
+        println("ok");
+    }
+    else{
+        println("erreur");
+    }
+}

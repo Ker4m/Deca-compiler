@@ -1,0 +1,10 @@
+// Description:
+//    Programme minimaliste utilisant printx depuis une expression.
+//
+// Resultats:
+//    2.3
+
+{
+    float i = 2.3;
+    printx(i);
+}

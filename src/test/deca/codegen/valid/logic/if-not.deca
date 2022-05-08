@@ -1,0 +1,8 @@
+//Test valide de not.
+
+{
+    boolean b = false;
+    if(!b){
+        println("ok");
+    }
+}

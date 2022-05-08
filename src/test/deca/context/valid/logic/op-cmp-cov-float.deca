@@ -1,0 +1,5 @@
+// Programme testant int < float
+
+{
+    if (7 < 4.5) {}
+}

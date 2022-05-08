@@ -1,0 +1,10 @@
+// invalide : erreur ligne 9, protected.
+
+class A{
+    protected float b;
+}
+
+{
+    A a = new A();
+    println(a.b);
+}

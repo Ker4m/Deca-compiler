@@ -1,0 +1,8 @@
+// Programme testant return d'un mauvais type
+
+class A {
+    int method() {
+        float j = 2.1;
+        return j;
+    }
+}

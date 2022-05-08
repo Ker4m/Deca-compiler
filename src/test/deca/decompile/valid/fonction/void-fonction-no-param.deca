@@ -1,0 +1,16 @@
+// Description:
+//    Programme valide ayant pour but de tester les fonctions.
+//
+// Resultats:
+//    ok
+class A {}
+
+class MaClasse extends A {
+    void test(){
+        print("ok");
+    }
+}
+
+{
+    test();
+}

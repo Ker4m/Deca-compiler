@@ -1,0 +1,14 @@
+class Test {
+
+    void test(){
+        int[5] tab;
+        tab[4] = 21;
+        println(tab[4]);
+    }
+    
+}
+
+{
+    Test t = new Test();
+    t.test();
+}

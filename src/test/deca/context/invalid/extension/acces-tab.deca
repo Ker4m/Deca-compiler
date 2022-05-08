@@ -1,0 +1,6 @@
+// Programme refusant l'accès à un élement d'un tableau avec 3 éléments
+
+{
+    int[2, 3, 4] tab;
+    print(tab[1]);
+}

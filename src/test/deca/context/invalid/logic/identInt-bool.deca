@@ -1,0 +1,7 @@
+// Programme testant la comparaison de booléen avec un int
+
+{
+    int i = 0;
+    boolean b = true;
+    if (i > b) {}
+}

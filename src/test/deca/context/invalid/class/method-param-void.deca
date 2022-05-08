@@ -1,0 +1,7 @@
+// Programme testant une déclaration de méthode avec un paramètre void
+
+class A {
+    void method(void i) {
+        
+    }
+}

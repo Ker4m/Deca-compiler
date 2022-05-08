@@ -1,0 +1,154 @@
+class MorpionUtil {
+    int p11 = 0;
+    int p12 = 0;
+    int p13 = 0;
+
+    int p21 = 0;
+    int p22 = 0;
+    int p23 = 0;
+
+    int p31 = 0;
+    int p32 = 0;
+    int p33 = 0;
+
+    void printIf(int p) {
+        if (p == 1) {
+            print(" ❌  ");
+        } else if (p == 2) {
+            print(" 🔵  ");
+        } else {
+            print("     ");
+        }
+    }
+
+    void printPlayerName(int player) {
+        if (player == 1) {
+            println("C'est le tour du joueur 1");
+        } else {
+            println("C'est le tour du joueur 2");
+        }
+    }
+
+    boolean setBoard(int player, int row, int column) {
+        if (row == 1) {
+            if (column == 1) {
+                if (this.p11 == 0) {this.p11 = player; return true;}
+            } else if (column == 2) {
+                if (this.p12 == 0) {this.p12 = player; return true;}
+            } else {
+                if (this.p13 == 0) {this.p13 = player; return true;}
+            }
+        } else if (row == 2) {
+            if (column == 1) {
+                if (this.p21 == 0) {this.p21 = player; return true;}
+            } else if (column == 2) {
+                if (this.p22 == 0) {this.p22 = player; return true;}
+            } else {
+                if (this.p23 == 0) {this.p23 = player; return true;}
+            }
+        } else {
+            if (column == 1) {
+                if (this.p31 == 0) {this.p31 = player; return true;}
+            } else if (column == 2) {
+                if (this.p32 == 0) {this.p32 = player; return true;}
+            } else {
+                if (this.p33 == 0) {this.p33 = player; return true;}
+            }
+        }
+        return false;
+    }
+}
+
+class MorpionGame extends MorpionUtil {
+
+    void printGame() {
+        println();
+        println("--------------");
+        this.printIf(this.p11);
+        this.printIf(this.p12);
+        this.printIf(this.p13);
+        println();
+        println();
+        this.printIf(this.p21);
+        this.printIf(this.p22);
+        this.printIf(this.p23);
+        println();
+        println();
+        this.printIf(this.p31);
+        this.printIf(this.p32);
+        this.printIf(this.p33);
+        println();
+        println("--------------");
+    }
+
+    int playerWin() {
+        int toReturn = 0;
+        if ((this.p11 != 0) && (this.p11 == this.p12) && (this.p12 == this.p13)) {
+            toReturn = this.p11;
+        } 
+        if ((this.p21 != 0) && (this.p21 == this.p22) && (this.p22 == this.p23)) {
+            toReturn = this.p21;
+        }
+        if ((this.p31 != 0) && (this.p31 == this.p32) && (this.p32 == this.p33)) {
+            toReturn = this.p31;
+        } 
+        if ((this.p11 != 0) && (this.p11 == this.p21) && (this.p21 == this.p31)) {
+            toReturn = this.p11;
+        } 
+        if ((this.p12 != 0) && (this.p12 == this.p22) && (this.p22 == this.p32)) {
+            toReturn = this.p12;
+        } 
+        if ((this.p13 != 0) && (this.p13 == this.p23) && (this.p23 == this.p33)) {
+            toReturn = this.p13;
+        } 
+        if ((this.p11 != 0) && (this.p11 == this.p22) && (this.p22 == this.p33)) {
+            toReturn = this.p11;
+        } 
+        if ((this.p13 != 0) && (this.p13 == this.p22) && (this.p22 == this.p31)) {
+            toReturn = this.p13;
+        } if (this.p11 * this.p12 * this.p13 * this.p21 * this.p22 * this.p23 * this.p31 * this.p32 * this.p33 != 0) {
+            toReturn = 3;
+        }
+        return toReturn;
+
+    }
+
+    void run() {
+        int player = 1;
+        int win = 0;
+        int row;
+        int column;
+        while (win == 0) {
+            this.printPlayerName(player);
+            print("Entrez la ligne:   ");
+            row = readInt();
+            print("Entrez la colonne: ");
+            column = readInt();
+            while (!this.setBoard(player, row, column)) {
+                println();
+                println("La case est déjà prise, rejouez");
+                print("Entrez la ligne:   ");
+                row = readInt();
+                print("Entrez la colonne: ");
+                column = readInt();
+            }
+
+            this.printGame();
+            win = playerWin();
+            player = 2 - (player - 1);
+        }
+
+        if (win == 1) {
+            println("Le joueur 1 a gagné !");
+        } else if (win == 2) {
+            println("Le joueur 2 a gagné !");
+        } else {
+            println("Égalité !!!");
+        }
+    }
+}
+
+{
+    MorpionGame mG = new MorpionGame();
+    mG.run();
+}

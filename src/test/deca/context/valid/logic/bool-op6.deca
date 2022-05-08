@@ -1,0 +1,10 @@
+// Description:
+//    Programme valide testant l'affectation d'une operation logique à un booleen.
+//
+// Resultats:
+//    ok
+
+{
+    boolean b = true && false;
+    b = b || false;
+}

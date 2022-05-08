@@ -1,0 +1,9 @@
+// Programme testant de définir une méthode s'appelant comme une super classe
+
+class A {}
+
+class B extends A
+
+class C extends B {
+    void A() {}
+}

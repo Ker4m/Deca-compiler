@@ -1,0 +1,83 @@
+package fr.ensimag.deca.context;
+
+import fr.ensimag.deca.DecacCompiler;
+import fr.ensimag.deca.tree.Location;
+import fr.ensimag.ima.pseudocode.Label;
+import fr.ensimag.ima.pseudocode.LabelOperand;
+import fr.ensimag.ima.pseudocode.Register;
+import fr.ensimag.ima.pseudocode.RegisterOffset;
+import fr.ensimag.ima.pseudocode.instructions.LOAD;
+import fr.ensimag.ima.pseudocode.instructions.STORE;
+import org.apache.commons.lang.Validate;
+
+/**
+ * Definition of a method
+ *
+ * @author gl09
+ * @date 01/01/2022
+ */
+public class MethodDefinition extends ExpDefinition {
+
+    private final Signature signature;
+    private final int index;
+    private Label label;
+
+    /**
+     * @param type      Return type of the method
+     * @param location  Location of the declaration of the method
+     * @param signature List of arguments of the method
+     * @param index     Index of the method in the class. Starts from 0.
+     */
+    public MethodDefinition(Type type, Location location, Signature signature, int index) {
+        super(type, location);
+        this.signature = signature;
+        this.index = index;
+    }
+
+    @Override
+    public boolean isMethod() {
+        return true;
+    }
+
+    public Label getLabel() {
+        Validate.isTrue(label != null,
+                "setLabel() should have been called before");
+        return label;
+    }
+
+    public void setLabel(Label label) {
+        this.label = label;
+    }
+
+    public int getIndex() {
+        return index;
+    }
+
+    @Override
+    public MethodDefinition asMethodDefinition(String errorMessage, Location l) {
+        return this;
+    }
+
+    public Signature getSignature() {
+        return signature;
+    }
+
+    @Override
+    public String getNature() {
+        return "method";
+    }
+
+    @Override
+    public boolean isExpression() {
+        return false;
+    }
+
+    public void genCodeDef(DecacCompiler compiler) {
+        compiler.addInstruction(new LOAD(new LabelOperand(getLabel()), Register.R0));
+        this.setOperand(new RegisterOffset(compiler.getCodeGen().getIndexGB(), Register.GB));
+        compiler.getCodeGen().incrIndexGB();
+        compiler.addInstruction(new STORE(Register.R0, this.getOperand()));
+
+    }
+
+}

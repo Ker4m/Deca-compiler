@@ -1,0 +1,45 @@
+	TSTO #5
+	BOV pile_pleine
+	ADDSP #3
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+	LOAD #0, R2
+	STORE R2, 3(GB)
+	WSTR "Entrez un entier : "
+	RINT
+	BOV input_error
+	LOAD R1, R2
+	STORE R2, 3(GB)
+	WSTR "On divise 7 par cet entier : "
+	LOAD #7, R2
+	LOAD 3(GB), R3
+	QUO R3, R2
+	BOV Division_by_zero
+	LOAD R2, R1
+	WINT
+	WNL
+	HALT
+code.Object.equals:
+	PUSH R2
+	PUSH R3
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	CMP R2, R3
+	SEQ R0
+	POP R2
+	POP R3
+	RTS
+pile_pleine:
+	WSTR "Error: stack overflow."
+	WNL
+	ERROR
+input_error:
+	WSTR "Error : wrong type given in input"
+	WNL
+	ERROR
+Division_by_zero:
+	WSTR "Error : division by zero"
+	WNL
+	ERROR

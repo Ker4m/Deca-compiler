@@ -1,0 +1,21 @@
+//Test valide instance of
+
+class A{}
+class B{}
+
+{
+    A a = new A();
+    if(a instanceof B){
+        println("erreur");
+    }
+    else{
+        println("ok");
+    }
+
+    if(a instanceof A){
+        println("ok");
+    }
+    else{
+        println("erreur");
+    }
+}

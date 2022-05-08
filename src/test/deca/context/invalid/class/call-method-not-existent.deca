@@ -1,0 +1,8 @@
+// Programme appelant une méthode sur une classe qui n'en a pas
+
+class A {}
+
+{
+    A a = new A();
+    a.method();
+}

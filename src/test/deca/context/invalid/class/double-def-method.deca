@@ -1,0 +1,8 @@
+// Programme testant la double définition de méthodes
+
+// Erreur ligne 7
+
+class A {
+    void method() {}
+    void method() {}
+}

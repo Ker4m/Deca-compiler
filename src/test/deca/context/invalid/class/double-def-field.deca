@@ -1,0 +1,6 @@
+// Programme testant la déclaration en double d'un field
+
+class A {
+    int i;
+    float i;
+}

@@ -1,0 +1,10 @@
+// Programme testant le cast  avec erreur
+
+class A {}
+
+class B {}
+
+{
+    A a = new A();
+    B b = (B) (a);
+}

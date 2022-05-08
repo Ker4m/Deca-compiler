@@ -1,0 +1,9 @@
+// Description:
+//    Affectation d'un booleen.
+//
+// Resultats:
+//    a = true
+
+{
+    boolean a = true;
+}

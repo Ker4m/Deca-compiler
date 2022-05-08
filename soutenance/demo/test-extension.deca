@@ -1,0 +1,58 @@
+// Programme de démonstration de l'extension
+
+#include NumDeca.decah
+
+    {
+    MatrixSet ms = new MatrixSet();
+    MatrixUtils mu = new MatrixUtils();
+    MatrixOperations mo = new MatrixOperations();
+
+    int[9] tab1;
+    float[9] tab2;
+
+    int[5, 5] mat;
+    float[5, 5] mat1;
+    float[5, 5] mat2;
+    float[5, 5] mat3;
+
+    tab1[2] = 1;
+    tab2[2] = 2.5;
+    println("Le terme d'indice 2 du tableau 1 est" + tab1[2]);
+    println("Le terme d'indice 2 du tableau 2 est" + tab2[2]);
+
+    ms.intSetIdentity(mat);
+    ms.floatSetZero(mat2);
+    mu.intMatrixPrint(mat);
+    mu.intToFloat(mat, mat1);
+    mu.floatMatrixPrint(mat1);
+
+    println("mat1 est la matrice identité et mat2 est la matrice nulle, sont-elles égales ?");
+    if(mu.floatMatrixEqual(mat1, mat2)){
+        println("true");
+    } else {
+        println("false");
+    }
+
+    mu.floatMatrixCopy(mat1, mat2);
+
+    println("mat1 et mat2 sont des copies, sont-elles égales ?");
+    if(mu.floatMatrixEqual(mat1, mat2)){
+        println("true");
+    } else {
+        println("false");
+    }
+
+    mat2[1, 1] = 1;
+    mo.floatMultConst(mat2, 3.0);
+    mo.floatSum(mat1, mat2);
+
+    mu.floatMatrixPrint(mat1);
+    println("Cette matrice est la somme de la matrice identité multipliée par 3 sommée à la matrice identité de même dimension");
+    mat2[2, 3] = 1;
+    mo.floatTranspose(mat2, mat3);
+    mu.floatMatrixPrint(mat3);
+
+    mo.floatMult(mat1, mat2, mat3);
+    println("Enfin, le produit de 2 matrices est fonctionnel");
+    mu.floatMatrixPrint(mat3);
+}

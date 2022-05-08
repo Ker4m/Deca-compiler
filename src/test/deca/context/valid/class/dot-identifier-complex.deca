@@ -1,0 +1,16 @@
+// Programme testant un cas très particulier de dotIdentifier
+
+class A {
+    protected int x;
+}
+
+class B extends A {
+    void method() {
+        print(this.x);
+    }
+}
+
+{
+    B b = new B();
+    b.method();
+}

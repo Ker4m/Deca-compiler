@@ -1,0 +1,7 @@
+// Description:
+//    tests de programme incorrect lexicalement (commentaire non termine)
+//
+// Resultats:
+//    ligne 7 : Erreur, commentaire non terminee (sur fin de fichier)
+
+/*commentaire pas finie

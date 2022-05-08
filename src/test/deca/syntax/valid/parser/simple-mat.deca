@@ -1,0 +1,7 @@
+//Programme valide for.
+
+//Programme valide testant les matrices.
+
+{
+    int[2,2] mat;
+}

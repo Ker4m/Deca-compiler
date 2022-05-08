@@ -1,0 +1,11 @@
+// Description:
+//    Programme minimaliste utilisant une concatenation 
+//    de'une chaine et d'un flottant comme parametre de printlx.
+//
+// Resultats:
+//    Hello2.3 (en hexa)
+
+{
+    float a = 2.3;
+    printlnx("Hello", a);
+}

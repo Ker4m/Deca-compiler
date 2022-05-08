@@ -1,0 +1,19 @@
+class Test {
+    int[2,2] tab;
+    float[9] array;
+
+    void setTab(int i, int j, int x){
+        tab[i,j] = x;
+    }
+
+    int getTab(int i, int j){
+        return tab[i,j];
+    }
+
+}
+
+{
+    Test t = new Test();
+    t.setTab(1,2, 66);
+    print(t.getTab(1,2));
+}

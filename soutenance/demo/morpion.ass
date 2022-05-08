@@ -1,0 +1,1410 @@
+	TSTO #25
+	BOV pile_pleine
+	ADDSP #16
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.MorpionUtil.printIf, R0
+	STORE R0, 5(GB)
+	LOAD code.MorpionUtil.printPlayerName, R0
+	STORE R0, 6(GB)
+	LOAD code.MorpionUtil.setBoard, R0
+	STORE R0, 7(GB)
+	LEA 3(GB), R0
+	STORE R0, 8(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 9(GB)
+	LOAD code.MorpionGame.printGame, R0
+	STORE R0, 10(GB)
+	LOAD code.MorpionGame.playerWin, R0
+	STORE R0, 11(GB)
+	LOAD code.MorpionGame.run, R0
+	STORE R0, 12(GB)
+	LOAD code.MorpionGame.setBoard, R0
+	STORE R0, 13(GB)
+	LOAD code.MorpionGame.printIf, R0
+	STORE R0, 14(GB)
+	LOAD code.MorpionGame.printPlayerName, R0
+	STORE R0, 15(GB)
+	NEW #19, R2
+	BOV tas_plein
+	LEA 8(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.MorpionGame
+	POP R2
+	STORE R2, 16(GB)
+	ADDSP #1
+	LOAD 16(GB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 4(R2)
+	SUBSP #1
+	LOAD R0, R2
+	HALT
+code.Object.equals:
+	PUSH R2
+	PUSH R3
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	CMP R2, R3
+	SEQ R0
+	POP R2
+	POP R3
+	RTS
+init.MorpionUtil:
+	LOAD -2(LB), R1
+	LOAD #0, R0
+	STORE R0, 1(R1)
+	LOAD #0, R0
+	STORE R0, 2(R1)
+	LOAD #0, R0
+	STORE R0, 3(R1)
+	LOAD #0, R0
+	STORE R0, 4(R1)
+	LOAD #0, R0
+	STORE R0, 5(R1)
+	LOAD #0, R0
+	STORE R0, 6(R1)
+	LOAD #0, R0
+	STORE R0, 7(R1)
+	LOAD #0, R0
+	STORE R0, 8(R1)
+	LOAD #0, R0
+	STORE R0, 9(R1)
+	RTS
+code.MorpionUtil.printIf:
+	TSTO #3
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	LOAD -3(LB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE else_0
+	WSTR " ❌  "
+	BRA fi_0
+else_0:
+	LOAD -3(LB), R2
+	LOAD #2, R3
+	CMP R3, R2
+	BNE else_1
+	WSTR " 🔵  "
+	BRA fi_1
+else_1:
+	WSTR "     "
+fi_1:
+fi_0:
+	BRA fin.MorpionUtil.printIf
+fin.MorpionUtil.printIf:
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MorpionUtil.printPlayerName:
+	TSTO #2
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	LOAD -3(LB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE else_2
+	WSTR "C'est le tour du joueur 1"
+	WNL
+	BRA fi_2
+else_2:
+	WSTR "C'est le tour du joueur 2"
+	WNL
+fi_2:
+	BRA fin.MorpionUtil.printPlayerName
+fin.MorpionUtil.printPlayerName:
+	POP R3
+	POP R2
+	RTS
+code.MorpionUtil.setBoard:
+	TSTO #7
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	LOAD -4(LB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE else_3
+	LOAD -5(LB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE else_4
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_5
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 1(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionUtil.setBoard
+	BRA fi_5
+else_5:
+fi_5:
+	BRA fi_4
+else_4:
+	LOAD -5(LB), R2
+	LOAD #2, R3
+	CMP R3, R2
+	BNE else_6
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 2(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_7
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 2(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionUtil.setBoard
+	BRA fi_7
+else_7:
+fi_7:
+	BRA fi_6
+else_6:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 3(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_8
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 3(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionUtil.setBoard
+	BRA fi_8
+else_8:
+fi_8:
+fi_6:
+fi_4:
+	BRA fi_3
+else_3:
+	LOAD -4(LB), R2
+	LOAD #2, R3
+	CMP R3, R2
+	BNE else_9
+	LOAD -5(LB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE else_10
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 4(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_11
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 4(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionUtil.setBoard
+	BRA fi_11
+else_11:
+fi_11:
+	BRA fi_10
+else_10:
+	LOAD -5(LB), R2
+	LOAD #2, R3
+	CMP R3, R2
+	BNE else_12
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 5(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_13
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 5(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionUtil.setBoard
+	BRA fi_13
+else_13:
+fi_13:
+	BRA fi_12
+else_12:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 6(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_14
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 6(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionUtil.setBoard
+	BRA fi_14
+else_14:
+fi_14:
+fi_12:
+fi_10:
+	BRA fi_9
+else_9:
+	LOAD -5(LB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE else_15
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 7(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_16
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 7(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionUtil.setBoard
+	BRA fi_16
+else_16:
+fi_16:
+	BRA fi_15
+else_15:
+	LOAD -5(LB), R2
+	LOAD #2, R3
+	CMP R3, R2
+	BNE else_17
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 8(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_18
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 8(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionUtil.setBoard
+	BRA fi_18
+else_18:
+fi_18:
+	BRA fi_17
+else_17:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 9(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_19
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 9(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionUtil.setBoard
+	BRA fi_19
+else_19:
+fi_19:
+fi_17:
+fi_15:
+fi_9:
+fi_3:
+	LOAD #0, R2
+	LOAD R2, R0
+	BRA fin.MorpionUtil.setBoard
+	BRA no_return
+fin.MorpionUtil.setBoard:
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+init.MorpionGame:
+	LOAD -2(LB), R0
+	PUSH R0
+	BSR init.MorpionUtil
+	SUBSP #1
+	LOAD -2(LB), R1
+	LOAD #0, R0
+	STORE R0, 3(R1)
+	LOAD #0, R0
+	STORE R0, 1(R1)
+	LOAD #0, R0
+	STORE R0, 7(R1)
+	LOAD #0, R0
+	STORE R0, 5(R1)
+	LOAD #0, R0
+	STORE R0, 4(R1)
+	LOAD #0, R0
+	STORE R0, 6(R1)
+	LOAD #0, R0
+	STORE R0, 8(R1)
+	LOAD #0, R0
+	STORE R0, 9(R1)
+	LOAD #0, R0
+	STORE R0, 2(R1)
+	RTS
+code.MorpionGame.printGame:
+	TSTO #3
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	WNL
+	WSTR "--------------"
+	WNL
+	ADDSP #2
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 6(R2)
+	SUBSP #2
+	LOAD R0, R2
+	ADDSP #2
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 2(R2), R2
+	LOAD R2, R0
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 6(R2)
+	SUBSP #2
+	LOAD R0, R2
+	ADDSP #2
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 3(R2), R2
+	LOAD R2, R0
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 6(R2)
+	SUBSP #2
+	LOAD R0, R2
+	WNL
+	WNL
+	ADDSP #2
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 4(R2), R2
+	LOAD R2, R0
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 6(R2)
+	SUBSP #2
+	LOAD R0, R2
+	ADDSP #2
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 5(R2), R2
+	LOAD R2, R0
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 6(R2)
+	SUBSP #2
+	LOAD R0, R2
+	ADDSP #2
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 6(R2), R2
+	LOAD R2, R0
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 6(R2)
+	SUBSP #2
+	LOAD R0, R2
+	WNL
+	WNL
+	ADDSP #2
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 7(R2), R2
+	LOAD R2, R0
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 6(R2)
+	SUBSP #2
+	LOAD R0, R2
+	ADDSP #2
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 8(R2), R2
+	LOAD R2, R0
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 6(R2)
+	SUBSP #2
+	LOAD R0, R2
+	ADDSP #2
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 9(R2), R2
+	LOAD R2, R0
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 6(R2)
+	SUBSP #2
+	LOAD R0, R2
+	WNL
+	WSTR "--------------"
+	WNL
+	BRA fin.MorpionGame.printGame
+fin.MorpionGame.printGame:
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MorpionGame.playerWin:
+	TSTO #3
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BEQ else_20
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 2(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_20
+endAnd_1:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 2(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 3(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_20
+endAnd_0:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	STORE R2, 1(LB)
+	BRA fi_20
+else_20:
+fi_20:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 4(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BEQ else_21
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 4(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 5(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_21
+endAnd_3:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 5(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 6(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_21
+endAnd_2:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 4(R2), R2
+	LOAD R2, R0
+	STORE R2, 1(LB)
+	BRA fi_21
+else_21:
+fi_21:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 7(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BEQ else_22
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 7(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 8(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_22
+endAnd_5:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 8(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 9(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_22
+endAnd_4:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 7(R2), R2
+	LOAD R2, R0
+	STORE R2, 1(LB)
+	BRA fi_22
+else_22:
+fi_22:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BEQ else_23
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 4(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_23
+endAnd_7:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 4(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 7(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_23
+endAnd_6:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	STORE R2, 1(LB)
+	BRA fi_23
+else_23:
+fi_23:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 2(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BEQ else_24
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 2(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 5(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_24
+endAnd_9:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 5(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 8(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_24
+endAnd_8:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 2(R2), R2
+	LOAD R2, R0
+	STORE R2, 1(LB)
+	BRA fi_24
+else_24:
+fi_24:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 3(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BEQ else_25
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 3(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 6(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_25
+endAnd_11:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 6(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 9(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_25
+endAnd_10:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 3(R2), R2
+	LOAD R2, R0
+	STORE R2, 1(LB)
+	BRA fi_25
+else_25:
+fi_25:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BEQ else_26
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 5(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_26
+endAnd_13:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 5(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 9(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_26
+endAnd_12:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	STORE R2, 1(LB)
+	BRA fi_26
+else_26:
+fi_26:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 3(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BEQ else_27
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 3(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 5(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_27
+endAnd_15:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 5(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 7(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_27
+endAnd_14:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 3(R2), R2
+	LOAD R2, R0
+	STORE R2, 1(LB)
+	BRA fi_27
+else_27:
+fi_27:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 2(R3), R3
+	LOAD R3, R0
+	MUL R3, R2
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 3(R3), R3
+	LOAD R3, R0
+	MUL R3, R2
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 4(R3), R3
+	LOAD R3, R0
+	MUL R3, R2
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 5(R3), R3
+	LOAD R3, R0
+	MUL R3, R2
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 6(R3), R3
+	LOAD R3, R0
+	MUL R3, R2
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 7(R3), R3
+	LOAD R3, R0
+	MUL R3, R2
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 8(R3), R3
+	LOAD R3, R0
+	MUL R3, R2
+	LOAD -2(LB), R3
+	CMP #null, R3
+	BEQ dereferencement_de_null
+	LOAD 9(R3), R3
+	LOAD R3, R0
+	MUL R3, R2
+	LOAD #0, R3
+	CMP R3, R2
+	BEQ else_28
+	LOAD #3, R2
+	STORE R2, 1(LB)
+	BRA fi_28
+else_28:
+fi_28:
+	LOAD 1(LB), R2
+	LOAD R2, R0
+	BRA fin.MorpionGame.playerWin
+	BRA no_return
+fin.MorpionGame.playerWin:
+	POP R3
+	POP R2
+	RTS
+code.MorpionGame.run:
+	TSTO #8
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	LOAD #1, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD #0, R2
+	STORE R2, 3(LB)
+	LOAD #0, R2
+	STORE R2, 4(LB)
+	BRA endWhile_0
+startWhile_0:
+	ADDSP #2
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD 1(LB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 7(R2)
+	SUBSP #2
+	LOAD R0, R2
+	WSTR "Entrez la ligne:   "
+	RINT
+	BOV input_error
+	LOAD R1, R2
+	STORE R2, 3(LB)
+	WSTR "Entrez la colonne: "
+	RINT
+	BOV input_error
+	LOAD R1, R2
+	STORE R2, 4(LB)
+	BRA endWhile_1
+startWhile_1:
+	WNL
+	WSTR "La case est déjà prise, rejouez"
+	WNL
+	WSTR "Entrez la ligne:   "
+	RINT
+	BOV input_error
+	LOAD R1, R2
+	STORE R2, 3(LB)
+	WSTR "Entrez la colonne: "
+	RINT
+	BOV input_error
+	LOAD R1, R2
+	STORE R2, 4(LB)
+endWhile_1:
+	ADDSP #4
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD 1(LB), R2
+	STORE R2, -1(SP)
+	LOAD 3(LB), R2
+	STORE R2, -2(SP)
+	LOAD 4(LB), R2
+	STORE R2, -3(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 5(R2)
+	SUBSP #4
+	LOAD R0, R2
+	CMP #0, R2
+	BEQ startWhile_1
+	ADDSP #1
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #1
+	LOAD R0, R2
+	ADDSP #1
+	LOAD -2(LB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 3(R2)
+	SUBSP #1
+	LOAD R0, R2
+	STORE R2, 2(LB)
+	LOAD #2, R2
+	LOAD 1(LB), R3
+	LOAD #1, R4
+	SUB R4, R3
+	SUB R3, R2
+	STORE R2, 1(LB)
+endWhile_0:
+	LOAD 2(LB), R2
+	LOAD #0, R3
+	CMP R3, R2
+	BEQ startWhile_0
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE else_29
+	WSTR "Le joueur 1 a gagné !"
+	WNL
+	BRA fi_29
+else_29:
+	LOAD 2(LB), R2
+	LOAD #2, R3
+	CMP R3, R2
+	BNE else_30
+	WSTR "Le joueur 2 a gagné !"
+	WNL
+	BRA fi_30
+else_30:
+	WSTR "Égalité !!!"
+	WNL
+fi_30:
+fi_29:
+	BRA fin.MorpionGame.run
+fin.MorpionGame.run:
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MorpionGame.setBoard:
+	TSTO #7
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	LOAD -4(LB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE else_31
+	LOAD -5(LB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE else_32
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_33
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 1(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionGame.setBoard
+	BRA fi_33
+else_33:
+fi_33:
+	BRA fi_32
+else_32:
+	LOAD -5(LB), R2
+	LOAD #2, R3
+	CMP R3, R2
+	BNE else_34
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 2(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_35
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 2(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionGame.setBoard
+	BRA fi_35
+else_35:
+fi_35:
+	BRA fi_34
+else_34:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 3(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_36
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 3(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionGame.setBoard
+	BRA fi_36
+else_36:
+fi_36:
+fi_34:
+fi_32:
+	BRA fi_31
+else_31:
+	LOAD -4(LB), R2
+	LOAD #2, R3
+	CMP R3, R2
+	BNE else_37
+	LOAD -5(LB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE else_38
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 4(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_39
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 4(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionGame.setBoard
+	BRA fi_39
+else_39:
+fi_39:
+	BRA fi_38
+else_38:
+	LOAD -5(LB), R2
+	LOAD #2, R3
+	CMP R3, R2
+	BNE else_40
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 5(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_41
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 5(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionGame.setBoard
+	BRA fi_41
+else_41:
+fi_41:
+	BRA fi_40
+else_40:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 6(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_42
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 6(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionGame.setBoard
+	BRA fi_42
+else_42:
+fi_42:
+fi_40:
+fi_38:
+	BRA fi_37
+else_37:
+	LOAD -5(LB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE else_43
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 7(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_44
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 7(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionGame.setBoard
+	BRA fi_44
+else_44:
+fi_44:
+	BRA fi_43
+else_43:
+	LOAD -5(LB), R2
+	LOAD #2, R3
+	CMP R3, R2
+	BNE else_45
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 8(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_46
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 8(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionGame.setBoard
+	BRA fi_46
+else_46:
+fi_46:
+	BRA fi_45
+else_45:
+	LOAD -2(LB), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 9(R2), R2
+	LOAD R2, R0
+	LOAD #0, R3
+	CMP R3, R2
+	BNE else_47
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 9(R2)
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MorpionGame.setBoard
+	BRA fi_47
+else_47:
+fi_47:
+fi_45:
+fi_43:
+fi_37:
+fi_31:
+	LOAD #0, R2
+	LOAD R2, R0
+	BRA fin.MorpionGame.setBoard
+	BRA no_return
+fin.MorpionGame.setBoard:
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MorpionGame.printIf:
+	TSTO #3
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	LOAD -3(LB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE else_48
+	WSTR " ❌  "
+	BRA fi_48
+else_48:
+	LOAD -3(LB), R2
+	LOAD #2, R3
+	CMP R3, R2
+	BNE else_49
+	WSTR " 🔵  "
+	BRA fi_49
+else_49:
+	WSTR "     "
+fi_49:
+fi_48:
+	BRA fin.MorpionGame.printIf
+fin.MorpionGame.printIf:
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MorpionGame.printPlayerName:
+	TSTO #2
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	LOAD -3(LB), R2
+	LOAD #1, R3
+	CMP R3, R2
+	BNE else_50
+	WSTR "C'est le tour du joueur 1"
+	WNL
+	BRA fi_50
+else_50:
+	WSTR "C'est le tour du joueur 2"
+	WNL
+fi_50:
+	BRA fin.MorpionGame.printPlayerName
+fin.MorpionGame.printPlayerName:
+	POP R3
+	POP R2
+	RTS
+pile_pleine:
+	WSTR "Error: stack overflow."
+	WNL
+	ERROR
+input_error:
+	WSTR "Error : wrong type given in input"
+	WNL
+	ERROR
+no_return:
+	WSTR "Error : no return after executing a method"
+	WNL
+	ERROR
+dereferencement_de_null:
+	WSTR "Error : dereferencing of null"
+	WNL
+	ERROR
+tas_plein:
+	WSTR "Error: heap full"
+	WNL
+	ERROR

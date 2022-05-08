@@ -1,0 +1,6 @@
+// Programme déclarant 2 fois le même tableau
+
+{
+    int[2] tab;
+    int[3] tab;
+}

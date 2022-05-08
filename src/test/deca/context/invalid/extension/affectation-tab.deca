@@ -1,0 +1,7 @@
+// Programme refusant l'affection à un élement de la matrice avec 3 arguments
+
+{
+    int[2] tab;
+    tab[1, 2, 3] = 2;
+    print(tab[1]);
+}

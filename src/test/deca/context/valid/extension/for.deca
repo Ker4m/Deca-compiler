@@ -1,0 +1,15 @@
+//Programme valide for.
+
+//Programme valide testant for each.
+// c = 5
+
+{
+    int[3] list = {1,2,3};
+    int c = 0;
+
+    for( int b : list){
+        c = c + b;
+    }
+
+    println(c);
+}

@@ -1,0 +1,15 @@
+// Description:
+//    Programme valide ayant pour but de tester l'accessibilite d'un attribut publique.
+//
+// Resultats:
+//    1
+
+class MaClasse{
+    int a = 1;
+    float i;
+}
+
+{
+    MaClasse classe = new MaClasse();
+    println(classe.a);
+}

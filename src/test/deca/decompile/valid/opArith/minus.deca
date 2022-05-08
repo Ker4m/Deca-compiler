@@ -1,0 +1,8 @@
+// Description:
+//    Programme valide ayant pour but de tester la soustraction.
+//
+// Resultats:
+//    c=0;
+{
+    int c = 2-2;
+} 

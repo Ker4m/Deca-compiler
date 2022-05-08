@@ -1,0 +1,12 @@
+// Description:
+//    Affectation et typage
+//
+// Resultats:
+//    Ligne 11: Affectation de types incompatibles.
+
+{
+   float a;
+
+   // Doit etre refuse.
+   a = true;
+}

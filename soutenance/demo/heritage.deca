@@ -1,0 +1,35 @@
+class A {
+	int x;
+	int y;
+
+	int getX() {
+		return this.x ;
+	}
+	void setX(int i) { 
+		this.x = i ; 
+	}
+	int getY() {
+		return this.y ;
+	}
+	void setY(int i) { 
+		this.y = i ; 
+	}
+}
+class B extends A {
+	int z = 3;
+	
+	int getZ() {
+		return this.z ;
+	}	
+	void setZ(int i) { 
+		this.z = i ; 
+	}
+}
+{
+	B b = new B() ;
+	b.setX(11); 
+    b.setY(7);
+    println("b.getX() = ", b.getX()) ; 
+    println("a.getY() = ", b.getY()) ; 
+    println("b.getZ() = ", b.getZ()) ; 
+}

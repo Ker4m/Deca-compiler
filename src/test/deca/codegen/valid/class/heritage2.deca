@@ -1,0 +1,41 @@
+class A {
+    int x1 = 1;
+    int x2 = 2;
+
+    void m1(){
+        println("1");
+    }
+    void m2(){
+        println("2");
+    }
+}
+
+class B extends A {
+    int x1 = 11;
+    int x3 = 3;
+
+    void m1(){
+        println("11");
+    }
+    void m3(){
+        println("3");
+    }
+
+
+}
+
+{
+    A a = new A();
+    B b = new B();
+    a.m1();
+    a.m2();
+    println(a.x1);
+    println(a.x2);
+
+    b.m1();
+    b.m2();
+    b.m3();
+    println(b.x1);
+    println(b.x2);
+    println(b.x3);
+}

@@ -1,0 +1,9 @@
+// Description:
+//    Cast valide.
+//
+// Resultats:
+//    a = 2
+
+{
+    int a = (int) (2.5);
+}

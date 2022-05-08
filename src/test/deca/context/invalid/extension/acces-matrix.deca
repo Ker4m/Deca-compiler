@@ -1,0 +1,6 @@
+// Programme validant l'accès à un élement de la matrice
+
+{
+    int[2,2.1] mat;
+    print(mat[1,1]);
+}

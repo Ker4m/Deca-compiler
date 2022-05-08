@@ -1,0 +1,9 @@
+// Description:
+//    Affectation d'un entier negatif.
+//
+// Resultats:
+//    a = -2
+
+{
+    int a = -2;
+}

@@ -1,0 +1,16 @@
+// Description:
+//    Programme invalide ayant pour but de tester les fonctions.
+//
+// Resultats:
+//    erreur ligne 15
+
+class MaClasse{
+    void test(int a){
+        print(a);
+    }
+}
+
+{
+    boolean b=true;
+    new MaClasse().test(b);
+}

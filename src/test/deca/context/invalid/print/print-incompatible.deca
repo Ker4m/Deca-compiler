@@ -1,0 +1,10 @@
+// Description:
+//    Programme minimaliste d'un booleen comme parametre de print.
+//
+// Resultats:
+//    Erreur ligne 9
+
+{
+    bool a = true;
+    print(a);
+}

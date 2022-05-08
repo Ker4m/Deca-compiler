@@ -1,0 +1,6 @@
+// Programme testant la décompilation de matrices qui sont atttributs d'une classe
+
+class Tableau {
+    int[5,5] tab;
+    protected float[2] array;
+}

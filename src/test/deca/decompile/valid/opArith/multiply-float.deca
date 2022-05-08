@@ -1,0 +1,9 @@
+// Description:
+//    Programme valide ayant pour but de tester la multiplication avec un flottant.
+//
+// Resultats:
+//    c=1;
+
+{
+    float c = 2*0.5;
+}

@@ -1,0 +1,8 @@
+// Programme testant instanceof sur autre chose qu'une classe
+
+class A {}
+
+{
+    A a = new A();
+    if (a instanceof int) {}
+}

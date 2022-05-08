@@ -1,0 +1,11 @@
+// Description:
+//    Programme minimaliste utilisant une concatenation 
+//    de'une chaine et d'un entier comme parametre de println.
+//
+// Resultats:
+//    Hello2
+
+{
+    int a = 2;
+    println("Hello", a);
+}

@@ -1,0 +1,20 @@
+// Description:
+//    Test des floats, valide.
+//
+// Resultats:
+//    ok
+
+{
+    float a = 1.5;
+    a = 1.4f;
+    a = 1.5e5;
+    a = 1.5e+5;
+    a = 1.5e-5;
+    a = 1.5E5;
+    a = 1.5E+4f;
+    a = 1.5E-4f;
+    a = 0xAB.5p4;
+    a = 0xCD.1Ap+4f;
+    a = 0x0.5P-5f;
+    a = 0x0.5P-5;
+}

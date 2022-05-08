@@ -1,0 +1,11 @@
+// Description:
+//    Programme minimaliste utilisant une concatenation 
+//    de'une chaine et d'un booleen comme parametre de println.
+//
+// Resultats:
+//    Erreur ligne 10
+
+{
+    boolean a = true;
+    println("Hello" + a);
+}

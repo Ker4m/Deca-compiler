@@ -1,0 +1,6 @@
+// Programme testant la décompilation de readint et readfloat
+
+{
+    int i = readInt();
+    float j = readFloat();
+}

@@ -1,0 +1,10 @@
+// Programme qui teste l'appel d'une méthode sur autre chose qu'une classe
+
+class A {
+    void method() {}
+}
+
+{
+    int i;
+    i.method();
+}

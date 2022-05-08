@@ -1,0 +1,5 @@
+// Programme testant la division par zéro dans une comparaison
+
+{
+    boolean b = 1 < 2/0;
+}

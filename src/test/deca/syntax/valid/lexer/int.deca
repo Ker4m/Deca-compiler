@@ -1,0 +1,15 @@
+// Description:
+//    Programme minimaliste testant les entiers.
+//
+// Resultats:
+//    ok
+
+{
+    int a = 1;
+    a = 500;
+    a = 50;
+    a = 2000;
+    a = 45680326;
+    a = 1065798;
+    a = 0;
+}

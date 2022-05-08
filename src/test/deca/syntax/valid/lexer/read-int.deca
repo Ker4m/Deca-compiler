@@ -1,0 +1,9 @@
+// Description:
+//    Test valide du lexer.
+//
+// Resultats:
+//    read int
+
+{
+    int a = readInt();
+}

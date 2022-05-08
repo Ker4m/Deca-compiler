@@ -1,0 +1,12 @@
+//Programme valide tableaux.
+
+//Programme valide testant les tableaux.
+
+{
+    int[3+2, 4 -3] list;
+    int[2 * 2 + 1 - 4 + 10, 1%2] tab;
+    int j = 1;
+    int k = 2*3 / 3;
+
+    list[k, j] = tab[j, j];
+}

@@ -1,0 +1,9 @@
+// Description:
+//    Programme valide ne contenant une classe à un attribut.
+//
+// Resultats:
+//    classe A avec un champs
+
+class A{
+    int a;
+}

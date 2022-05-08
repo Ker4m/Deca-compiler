@@ -1,0 +1,9 @@
+// Description:
+//    Affectation d'une chaine.
+//
+// Resultats:
+//    erreur undefined type
+
+{
+    String a = "bonjour";
+}

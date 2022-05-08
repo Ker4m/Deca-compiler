@@ -1,0 +1,7 @@
+// Description:
+//    Test invalide du lexer.
+//
+// Resultats:
+//    erreur ligne 7
+
+#include "truc

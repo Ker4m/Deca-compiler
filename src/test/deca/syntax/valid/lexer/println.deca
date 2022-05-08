@@ -1,0 +1,9 @@
+// Description:
+//    Test println.
+//
+// Resultats:
+//    ok
+
+{
+    println("ok");
+}

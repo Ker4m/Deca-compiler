@@ -1,0 +1,9 @@
+// Description:
+//    Test print null.
+//
+// Resultats:
+//    ok
+
+{
+    print(null);
+}

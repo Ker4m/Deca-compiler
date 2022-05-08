@@ -1,0 +1,7 @@
+{
+    int x;
+
+    print("Entrez un entier : ");
+    x = readInt();
+    println("On divise 7 par cet entier : ", 7 / x);
+}

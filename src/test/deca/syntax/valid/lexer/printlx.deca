@@ -1,0 +1,9 @@
+// Description:
+//    Test printlx.
+//
+// Resultats:
+//    ok
+
+{
+    printlx("ok");
+}

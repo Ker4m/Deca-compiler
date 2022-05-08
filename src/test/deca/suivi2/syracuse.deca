@@ -1,0 +1,20 @@
+{
+    int u;
+    int v = 0;
+    
+    print("Entrez un Entier: ");
+    u = readInt();
+
+    println("Voici les appels effectués: ");
+    while (!(u==1)) {
+	if (u%2 == 0) {
+	    u = u/2;
+	} else {
+	    u = 2*u +u + 1;
+	}
+	v = v + 1;
+	println(u);
+    }
+    println("Nombre d'étapes: ", v);
+
+}

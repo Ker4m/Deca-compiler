@@ -1,0 +1,11 @@
+// invalide : erreur ligne 10, protected.
+
+class A{
+    protected  int b;
+}
+
+class B{
+    void m(){
+        println(a.b);
+    }
+}

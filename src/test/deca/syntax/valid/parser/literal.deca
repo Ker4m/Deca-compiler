@@ -1,0 +1,10 @@
+// Description:
+//    Test du non terminal literal.
+//
+// Resultats:
+//    ok
+
+{
+    boolean a = true;
+    boolean b = false;
+}

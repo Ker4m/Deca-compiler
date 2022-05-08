@@ -1,0 +1,25 @@
+{
+    boolean t = true;
+    boolean f = false;
+
+    if(t || t){
+        println("ok");
+    }
+    else{
+        println("erreur");
+    }
+
+    if(t || f){
+        println("ok");
+    }
+    else{
+        println("erreur");
+    }
+
+    if(f || f){
+        println("erreur");
+    }
+    else{
+        println("ok");
+    }
+}

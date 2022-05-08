@@ -1,0 +1,20 @@
+// Programme testant dotIdentifier avec un objet null
+
+class A {
+    void method() {
+        println("ok");
+        print(7);
+        printx(2.3);
+    }
+}
+
+class B extends A {
+    void method2() {
+        method();
+    }
+}
+
+{
+    B b = new B();
+    b.method2();
+}

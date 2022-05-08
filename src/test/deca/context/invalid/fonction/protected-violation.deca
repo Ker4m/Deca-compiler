@@ -1,0 +1,10 @@
+// Programme testant si Protected marche bien
+
+class A {
+    protected int i;
+}
+
+{
+    A a = new A();
+    print(a.i);
+}

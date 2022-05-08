@@ -1,0 +1,9 @@
+// Description:
+//    Cast valide.
+//
+// Resultats:
+//    b true
+
+{
+    boolean b = (boolean) (true);
+}

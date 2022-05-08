@@ -1,0 +1,9 @@
+// Description:
+//    Programme minimaliste testant le cast simple.
+//
+// Resultats:
+//    a = 1.0
+
+{
+    float a = (float) (1);
+}

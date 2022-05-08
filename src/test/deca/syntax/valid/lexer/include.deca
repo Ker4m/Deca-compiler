@@ -1,0 +1,7 @@
+// Description:
+//    Programme minimaliste testant l'inclusion.
+//
+// Resultats:
+//    ok
+
+#include "float.deca"

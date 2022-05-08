@@ -1,0 +1,11 @@
+// Description:
+//    Test complet des caractères pour string.
+//
+// Resultats:
+//    ok
+
+{
+    print("\\");
+    print("\"");
+    print(" & é ( - à è _ ç ) [ { = ° * ù % $ £ ; : , ? . ! } ï î ^ ` ~ + | µ ' ]");
+}

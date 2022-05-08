@@ -1,0 +1,9 @@
+// Description:
+//    Test valide du lexer.
+//
+// Resultats:
+//    read float
+
+{
+    float a = readFloat();
+}

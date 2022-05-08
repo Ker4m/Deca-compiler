@@ -1,0 +1,77 @@
+class Rational {
+    int num;
+    int denom = 1;
+
+	int do(int a){
+		a = a * a;
+		return a;
+	}
+    
+    int getNum() {
+        return this.num;
+    }
+
+    int getDenom() {
+        return this.denom;
+    }
+	
+    void setNum(int n) {
+        this.num = n;
+    }
+
+    void setDenom(int d) {
+        if (d == 0) {
+            println("Error : denom equal to zero");
+        } else {
+        this.denom = d;
+		}
+    }
+	
+    void mult(Rational r) {
+        this.num = this.getNum() * r.getNum();
+        this.denom = this.getDenom() * r.getDenom();
+    }
+
+    Rational multiply(Rational r1) {
+    	Rational res = new Rational();
+		res.setNum(r1.num * this.num);
+		res.setDenom(r1.denom * this.denom);
+        return res;
+    }
+
+    void add(Rational r) {
+        this.num = r.getDenom() * this.getNum() + this.getDenom() * r.getNum();
+        this.denom = r.getDenom() * this.getDenom();
+    }
+
+	void toPrint(){
+		println(this.num, " / ", this.denom);
+	}
+    
+}
+
+
+{
+    Rational r = new Rational();
+    Rational s = new Rational();
+	
+
+	r.setNum(6);
+	r.setDenom(4);
+    r.toPrint();
+
+	
+	s.setNum(1);
+	s.setDenom(3);
+    s.toPrint();
+
+	r.mult(s);
+	r.toPrint();
+
+    r.add(s);
+	r.toPrint();
+
+    s = s.multiply(s);  
+    s.toPrint();
+
+}

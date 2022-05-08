@@ -1,0 +1,6 @@
+//Programme valide, affichage de " et \
+
+{
+    println("\"");
+    print("\\");
+}

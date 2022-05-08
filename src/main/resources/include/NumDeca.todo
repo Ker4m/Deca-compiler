@@ -1,0 +1,456 @@
+// Grenoble INP - Ensimag, UGA - Projet GL
+// Library for class Matrix of Deca, coded in Deca
+class MatrixSet {
+    /* MATRICE IDENTITE */
+    void floatSetIdentity(float[] matrix) {
+        int i = 0, j = 0;
+        if (matrix.length == matrix.width) {
+            while (i < matrix.length) {
+                j = 0;
+                while (j < matrix.length) {
+                    if (i == j) {
+                        matrix[i,j] = 1;
+                    }
+                    else {
+                        matrix[i,j] = 0;
+                    }
+                    j = j + 1;
+                }
+                i = i + 1;
+            }
+        }
+        else {
+            println ("The matrix must be square");
+        }
+    }
+    void intSetIdentity(int[] matrix) {
+        int i = 0, j = 0;
+        if (matrix.length == matrix.width) {
+            while (i < matrix.length) {
+                j = 0;
+                while (j < matrix.length) {
+                    if (i == j) {
+                        matrix[i,j] = 1;
+                    }
+                    else {
+                        matrix[i,j] = 0;
+                    }
+                    j = j + 1;
+                }
+                i = i + 1;
+            }
+        }
+        else {
+            println ("The matrix must be square");
+        }
+    }
+
+    /* MATRICE NULLE */
+    void floatSetZero(float[] matrix) {
+        int i = 0, j = 0;
+        while (i < matrix.length) {
+            j = 0;
+            while (j < matrix.width) {
+                matrix[i,j] = 0;
+                j = j + 1;
+            }
+            i = i + 1;
+        }
+    }
+    void intSetZero(int[] matrix) {
+        int i = 0, j = 0;
+        while (i < matrix.length) {
+            j = 0;
+            while (j < matrix.width) {
+                matrix[i,j] = 0;
+                j = j + 1;
+            }
+            i = i + 1;
+        }
+    }
+}
+
+class MatrixOperations {
+
+    /* SOMME DE 2 MATRICES */
+    void floatSum(float[] matrix1, float[] matrix2) {
+        int i = 0, j = 0;
+        if (matrix1.length == matrix2.length && matrix1.width == matrix2.width) {
+            while (i < matrix1.length) {
+                j = 0;
+                while (j < matrix1.width) {
+                    matrix1[i, j] = matrix1[i, j] + matrix2[i, j];
+                    j = j + 1;
+                }
+                i = i + 1;
+            }
+        }
+        else {
+            println ("Error: Incompatible sizes in floatSum");
+        }
+    }
+    void intSum(int[] matrix1, int[] matrix2) {
+        int i = 0, j = 0;
+        if (matrix1.length == matrix2.length && matrix1.width == matrix2.width) {
+            while (i < matrix1.length) {
+                j = 0;
+                while (j < matrix1.width) {
+                    matrix1[i, j] = matrix1[i, j] + matrix2[i, j];
+                    j = j + 1;
+                }
+                i = i + 1;
+            }
+        }
+        else {
+            println ("Error: Incompatible sizes in intSum");
+        }
+    }
+
+    /* MULTIPLICATION PAR UNE CONSTANTE */
+    void floatMultConst(float[] matrix, float const) {
+        float[matrix.length, matrix.width] matrixMult;
+        int i = 0, j = 0;
+        while (i < matrix.length) {
+            j = 0;
+            while (j < matrix.width) {
+                matrix[i, j] = matrix[i, j] * const;
+                j = j + 1;
+            }
+            i = i + 1;
+        }
+    }
+    void intMultConst(int[] matrix, int const) {
+        int[matrix.length, matrix.width] matrixMult;
+        int i = 0, j = 0;
+        while (i < matrix.length) {
+            j = 0;
+            while (j < matrix.width) {
+                matrix[i, j] = matrix[i, j] * const;
+                j = j + 1;
+            }
+            i = i + 1;
+        }
+    }
+
+    /* TRANSPOSEE */
+    void floatTranspose(float[] inputMatrix, float[] returnMatrix) {
+        int i = 0, j = 0;
+        if ((inputMatrix.length != returnMatrix.width) || (inputMatrix.width != returnMatrix.length)) {
+            println("Error: Incompatible sizes in floatTranspose");
+        } else {
+            while (i < inputMatrix.width) {
+                j = 0;
+                while (j < inputMatrix.length) {
+                    returnMatrix[i, j] = inputMatrix[j, i];
+                    j = j + 1;
+                }
+                i = i + 1;
+            }
+        }
+    }
+    void intTranspose(int[] inputMatrix, int[] returnMatrix) {
+        int i = 0, j = 0;
+        if ((inputMatrix.length != returnMatrix.width) || (inputMatrix.width != returnMatrix.length)) {
+            println("Error: Incompatible sizes in intTranspose");
+        } else {
+            while (i < inputMatrix.width) {
+                j = 0;
+                while (j < inputMatrix.length) {
+                    returnMatrix[i, j] = inputMatrix[j, i];
+                    j = j + 1;
+                }
+                i = i + 1;
+            }
+        }
+    }
+
+    /* AJOUTER LIGNE / COLONNE */
+    float[] addRowZero(float[] matrix, int n) {
+        float[matrix.length + n,matrix.width] matrix2;
+        int i = 0, j = 0, k = 0;
+        while (j < matrix.width){
+            i = 0;
+            while (i < matrix.length){
+                matrix2[i,j] = matrix[i,j];
+                i = i + 1;
+            }
+            while (k < n){
+                matrix2[matrix.length + k,j] = 0;
+                k = k + 1;
+            }
+            j = j + 1;
+        }
+    }
+    float[] addColZero(float[] matrix, int m) {
+        float[matrix.length,matrix.width + m] matrix2;
+        int i = 0, j = 0, k = 0;
+        while (i < matrix.length){
+            j = 0;
+            while (j < matrix.width){
+                matrix2[i,j] = matrix[i,j];
+                j = j + 1;
+            }
+            while (k < m){
+                matrix2[i,matrix.width + k] = 0;
+                k = k + 1;
+            }
+            i = i + 1;
+        }
+    }
+
+    /* ENLEVER UNE LIGNE / COLONNE */
+    float[] rmLin(float[] matrix, int n) {
+        float[matrix.length - n,matrix.width] matrix2;
+        int i = 0, j = 0;
+        if (n >= matrix.length) {
+            println ("n must be smaller");
+            return matrix;
+        } else {
+            while (j < matrix.width){
+                i = 0;
+                while (i < matrix.length - n){
+                    matrix2[i,j] = matrix[i,j];
+                    i = i + 1;
+                }
+                j = j + 1;
+            }
+            return matrix2;
+        }
+    }
+
+    float[] rmCol(float[] matrix, int m) {
+        float[matrix.length,matrix.width - m] matrix2;
+        int i = 0, j = 0;
+        if (m >= matrix.length) {
+            println ("m must be smaller");
+            return matrix;
+        }
+        else {
+            while (j < matrix.width - m){
+                i = 0;
+                while (i < matrix.length){
+                    matrix2[i,j] = matrix[i,j];
+                    i = i + 1;
+                }
+                j = j + 1;
+            }
+            return matrix2;
+        }
+    }
+
+    /* PRODUIT MATRICIEL (STRASSEN POUR LES GRANDES MATRICES) */
+    float[] matrixProd(float[] leftMatrix, float[] rightMatrix) {
+
+        int n = leftMatrix.length / 2, modn = leftMatrix.length % 2;
+        int nn = n + modn;
+        float[leftMatrix.length, leftMatrix.width] matrixProd;
+        //float[nn,nn] A11, [nn,nn] A12, [nn,nn] A21, [nn,nn] A22;
+        //float[nn,nn] B11, [nn,nn] B12, [nn,nn] B21, [nn,nn] B22;
+        int i = 0, j = 0, k = 0;
+        //float[nn, nn] M1, [nn, nn] M2, [nn, nn] M3, [nn, nn] M4, [nn, nn] M5, [nn, nn] M6, [nn, nn] M7;
+
+        if ((leftMatrix.length != leftMatrix.width) || (rightMatrix.length != rightMatrix.width) || (leftMatrix.length != rightMatrix.length)) {
+            println("Dimensions of the given matrices are not the same");
+        }
+        
+        /* SI LES MATRICES CREEES SONT DE TAILLE > 3, ON UTILISE L'ALOGORITHME DE STRASSEN */
+        // if (leftMatrix.length >= 32) {
+        //     while (i < n) {
+        //         j = 0;
+        //         while (j < n) {
+        //             A11[i,j] = leftMatrix[i,j];
+        //             A12[i,j] = leftMatrix[i,n + j + 1];
+        //             A21[i,j] = leftMatrix[n + i + 1,j];
+        //             A22[i,j] = leftMatrix[n + i + 1,n + j + 1];
+        //             B11[i,j] = rightMatrix[i,j];
+        //             B12[i,j] = rightMatrix[i,n + j + 1];
+        //             B21[i,j] = rightMatrix[n + i + 1,j];
+        //             B22[i,j] = rightMatrix[n + i + 1,n + j + 1];
+        //             j = j + 1;
+        //         }
+        //         i = i + 1;
+        //     }
+        //     /* SI n N'EST PAS UN MULTIPLE DE 2, IL FAUT AJOUTER UNE LIGNE ET UNE COLONNE A CHAQUE MATRICE */
+        //     if (modn == 1) {
+        //         j = 0;
+        //         while (j < n) {
+        //             A11[nn,j] = 0;
+        //             A12[nn,j] = 0;
+        //             A21[nn,j] = leftMatrix[n + nn,j];
+        //             A22[nn,j] = leftMatrix[n + nn,n + j + 1];
+        //             B11[nn,j] = 0;
+        //             B12[nn,j] = 0;
+        //             B21[nn,j] = rightMatrix[n + nn,j];
+        //             B22[nn,j] = rightMatrix[n + nn,n + j + 1];
+        //             A11[i,nn] = 0;
+        //             A12[i,nn] = leftMatrix[i,n + nn];
+        //             A21[i,nn] = 0;
+        //             A22[i,nn] = leftMatrix[n + i + 1,n + nn];
+        //             B11[i,nn] = 0;
+        //             B12[i,nn] = rightMatrix[i,n + nn];
+        //             B21[i,nn] = 0;
+        //             B22[i,nn] = rightMatrix[n + i + 1,n + nn];
+        //             j = j + 1;
+        //         }
+        //     }
+
+        //     M1 = this.matrixProd(this.floatSum(A11, A22), this.floatSum(B11, B22));
+        //     M2 = this.matrixProd(this.floatSum(A21, A22), B11);
+        //     M3 = this.matrixProd(A11, this.floatSum(B12, this.floatMultConst(B22, -1.0)));
+        //     M4 = this.matrixProd(A22, this.floatSum(B21, this.floatMultConst(B11, -1.0)));
+        //     M5 = this.matrixProd(this.floatSum(A11, A12), B22);
+        //     M6 = this.matrixProd(this.floatSum(A21, this.floatMultConst(A11, -1.0)), this.floatSum(B11, B12));
+        //     M7 = this.matrixProd(this.floatSum(A12, this.floatMultConst(A22, -1.0)), this.floatSum(B21, B22));
+
+        //     i = 0;
+        //     j = 0;
+        //     while (i < nn) {
+        //         j = 0;
+        //         while (j < nn) {
+        //             matrixProd[i,j] = M1[i,j] + M4[i,j] - M5[i,j] + M7[i,j];
+        //             matrixProd[i,nn + j] = M3[i,j] + M5[i,j];
+        //             matrixProd[nn + i,j] = M2[i,j] + M4[i,j];
+        //             matrixProd[nn + i,nn + j] = M1[i,j] - M2[i,j] + M3[i,j] + M6[i,j];
+        //             j = j + 1;
+        //         } 
+        //         i = i + 1;
+        //     }
+        // }
+        // else {
+            i = 0;
+            j = 0;
+            k = 0;
+            while (i < leftMatrix.length) {
+                j = 0;
+                while (j < rightMatrix.width) {
+                    k = 0;
+                    while (k < leftMatrix.width) {
+                        matrixProd[i, j] = leftMatrix[i, k] * rightMatrix[k, j];
+                        k = k + 1;
+                    }
+                    j = j + 1;
+                }
+                i = i + 1;
+            }
+        //}
+        return matrixProd;
+
+    }
+}
+
+class MatrixUtils {
+
+    void floatMatrixPrint(float[] matrix){
+        int i = 0, j = 0;
+        println("[");
+        while (i < matrix.length){
+            j = 0;
+            while (j < matrix.width){
+                print(matrix[i,j], " ");
+                j = j + 1;
+            }
+            println("");
+            i = i + 1;
+        }
+        println("]");
+    }
+    void intMatrixPrint(int[] matrix){
+        int i = 0, j = 0;
+        println("[");
+        while (i < matrix.length){
+            j = 0;
+            while (j < matrix.width){
+                print(matrix[i,j], " ");
+                j = j + 1;
+            }
+            println("");
+            i = i + 1;
+        }
+        println("]");
+    }
+
+    boolean floatMatrixEqual(float[] matrix, float[] matrix2) {
+        int i = 0, j = 0;
+        if (matrix.length != matrix2.width || matrix.width != matrix2.length) {
+            return false;
+        }
+        while (i < matrix.length){
+            j = 0;
+            while (j < matrix.width){
+                if (matrix[i,j] != matrix2[i,j]){
+                    return false;
+                }
+                j = j + 1;
+            }
+            i = i + 1;
+        }
+        return true;
+    }
+    boolean intMatrixEqual(int[] matrix, int[] matrix2) {
+        int i = 0, j = 0;
+        if (matrix.length != matrix2.width || matrix.width != matrix2.length) {
+            return false;
+        }
+        while (i < matrix.length){
+            j = 0;
+            while (j < matrix.width){
+                if (matrix[i,j] != matrix2[i,j]){
+                    return false;
+                }
+                j = j + 1;
+            }
+            i = i + 1;
+        }
+        return true;
+    }
+
+    /* COPIE D'UNE MATRICE */
+    void floatMatrixCopy(float[] inputMatrix, float[] returnMatrix) {
+        int i = 0, j = 0;
+        if ((inputMatrix.length != returnMatrix.length) || (inputMatrix.width != returnMatrix.width)) {
+            println("Error: Incompatible sizes in floatMatrixCopy");
+        } else {
+            while (i < inputMatrix.length) {
+                j = 0;
+                while (j < inputMatrix.width) {
+                    returnMatrix[i,j] = inputMatrix[i,j];
+                    j = j + 1;
+                }
+                i = i + 1;
+            }
+        }
+    }
+    void intMatrixCopy(int[] inputMatrix, int[] returnMatrix) {
+        int i = 0, j = 0;
+        if ((inputMatrix.length != returnMatrix.length) || (inputMatrix.width != returnMatrix.width)) {
+            println("Error: Incompatible sizes in intMatrixCopy");
+        } else {
+            while (i < inputMatrix.length) {
+                j = 0;
+                while (j < inputMatrix.width) {
+                    returnMatrix[i,j] = inputMatrix[i,j];
+                    j = j + 1;
+                }
+                i = i + 1;
+            }
+        }
+    }
+
+    void intToFloat(int[] inputMatrix, float[] returnMatrix){
+        int i = 0, j = 0;
+        if ((inputMatrix.length != returnMatrix.length) || (inputMatrix.width != returnMatrix.width)) {
+            println("Error: Incompatible sizes in intToFloat");
+        } else {
+            while (i < inputMatrix.length){
+                j = 0;
+                while (j < inputMatrix.width){
+                    returnMatrix[i,j] = inputMatrix[i,j];
+                    j = j + 1;
+                }
+                i = i + 1;
+            }
+        }
+    }
+}
+
+// End of Deca Matrix library

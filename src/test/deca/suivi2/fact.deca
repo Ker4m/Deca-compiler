@@ -1,0 +1,17 @@
+{
+    int n;
+    int i = 1;
+    int res = 1;
+
+    println("--- Fonction factorielle ---");
+    print("Entrez un entier : ");
+    n = readInt();
+    println("...");
+
+    while(i<=n){
+        res = res * i;
+        i = i + 1;
+    }
+    println("Le résultat est : ", res);
+
+}

@@ -1,0 +1,9 @@
+// Description:
+//    Programme invalide ayant pour but de tester modulo zero.
+//
+// Resultats:
+//    Erreur ligne 8
+
+{
+    int c = 2%0;
+}

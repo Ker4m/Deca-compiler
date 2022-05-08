@@ -1,0 +1,9 @@
+// Description:
+//    Programme valide testant l'affectation d'une operation logique à un booleen.
+//
+// Resultats:
+//    ok
+
+{
+    boolean b = 1 != 2;
+}

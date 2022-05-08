@@ -1,0 +1,10 @@
+// Programme testant dot identifier sur un entier
+
+class A {
+    int i;
+}
+
+{
+    int j;
+    print(j.i);
+}

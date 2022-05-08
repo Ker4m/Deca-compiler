@@ -1,0 +1,17 @@
+//Test asm method body valide.
+
+class Test {
+    int a = 1;
+    
+    
+    void test() asm("
+    LOAD #1, R1
+    WINT
+    ");
+   
+}
+
+{
+    Test t = new Test();
+    t.test();
+}

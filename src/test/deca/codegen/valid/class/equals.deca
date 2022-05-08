@@ -1,0 +1,27 @@
+// test the method equals
+
+// result :
+// ok
+// ok
+//
+
+
+class Test {
+    // extends Object
+}
+
+{
+    Test t1 = new Test();
+    Test t2 = new Test();
+    boolean b = t1.equals(t2);
+    if(!true){
+        println("ok");
+    } else {
+        println("nok");
+    }
+    if(b){
+        println("nok");
+    } else {
+        println("ok");
+    }
+}

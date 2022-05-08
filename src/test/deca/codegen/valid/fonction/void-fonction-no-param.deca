@@ -1,0 +1,15 @@
+// Description:
+//    Programme valide ayant pour but de tester les fonctions.
+//
+// Resultats:
+//    ok
+
+class MaClasse{
+    void test(){
+        print("ok");
+    }
+}
+
+{
+    new MaClasse().test();
+}

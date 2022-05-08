@@ -1,0 +1,22 @@
+// Description:
+//    Programme valide testant les identificateurs.
+//
+// Resultats:
+//    ok
+
+{
+    int ident;
+    int Ident;
+    int IDENT;
+    int ident1;
+    int $ident;
+    int $$ident;
+    int _ident;
+    int __ident;
+    int _$ident;
+    int $_ident;
+    int $1ident;
+    int _1ident;
+    int i$_$1ident;
+    int _$$_1ident;
+}

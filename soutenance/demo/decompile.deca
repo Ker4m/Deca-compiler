@@ -1,0 +1,14 @@
+class MaClasse {
+    int field1 = 1;
+    float field2;
+    boolean field3;
+
+    void maMethode(int param){
+        print("Mes instruction");
+    }
+}
+{
+    MaClasse m = new MaClasse();
+    m.maMethode();
+}
+

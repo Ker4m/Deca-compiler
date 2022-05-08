@@ -1,0 +1,9 @@
+// Programme testant new avec autre chose qu'une classe
+
+class A {
+
+}
+
+{
+    int i = new A();
+}

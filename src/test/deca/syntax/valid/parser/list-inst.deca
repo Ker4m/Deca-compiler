@@ -1,0 +1,11 @@
+// Description:
+//    Test du non terminal list-inst.
+//
+// Resultats:
+//    ok
+
+{
+    print("bonjour");
+    print("rebonjour");
+    print("bonsoir");
+}

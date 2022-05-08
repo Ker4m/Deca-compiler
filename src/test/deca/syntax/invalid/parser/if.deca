@@ -1,0 +1,6 @@
+// Invalid if test
+
+{
+    if (true) {
+
+}

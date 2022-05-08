@@ -1,0 +1,5 @@
+{
+    int[6, 19] tab;
+    println(tab.length);
+    println(tab.width);
+}

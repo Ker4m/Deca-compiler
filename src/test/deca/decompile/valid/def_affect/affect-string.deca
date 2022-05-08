@@ -1,0 +1,9 @@
+// Description:
+//    Affectation d'une chaine.
+//
+// Resultats:
+//    a = "bonjour"
+
+{
+    String a = "bonjour";
+}

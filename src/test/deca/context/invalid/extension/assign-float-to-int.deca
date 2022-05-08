@@ -1,0 +1,8 @@
+// Programme permettant de tester l'assignation d'un float dans un tableau d'entier
+
+// Resultats erreur
+
+{
+    int[2] tab;
+    tab[1] = 2.3;
+}

@@ -1,0 +1,10 @@
+// Description:
+//    Programme minimaliste utilisant une concatenation 
+//    de chaines comme parametre de printlx.
+//
+// Resultats:
+//    Hello world
+
+{
+    printlnx("Hello", "World");
+}

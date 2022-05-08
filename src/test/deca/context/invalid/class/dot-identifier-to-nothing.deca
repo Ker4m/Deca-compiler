@@ -1,0 +1,10 @@
+// Programme testant dot identifier sur un quelque chose qui n'existe pas
+
+class A {
+    int i;
+}
+
+{
+    A a = new A();
+    print(a.j);
+}

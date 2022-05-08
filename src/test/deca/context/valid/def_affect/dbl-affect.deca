@@ -1,0 +1,9 @@
+// Description:
+//    Test non terminal primary_exp.
+//
+// Resultats:
+//    ok
+
+{
+    float a = 2.3, b = 3.2;
+}

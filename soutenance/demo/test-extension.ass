@@ -1,0 +1,2896 @@
+	TSTO #59
+	BOV pile_pleine
+	ADDSP #38
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.MatrixSet.floatSetIdentity, R0
+	STORE R0, 5(GB)
+	LOAD code.MatrixSet.intSetIdentity, R0
+	STORE R0, 6(GB)
+	LOAD code.MatrixSet.floatSetZero, R0
+	STORE R0, 7(GB)
+	LOAD code.MatrixSet.intSetZero, R0
+	STORE R0, 8(GB)
+	LOAD code.MatrixSet.floatSetOne, R0
+	STORE R0, 9(GB)
+	LOAD code.MatrixSet.intSetOne, R0
+	STORE R0, 10(GB)
+	LEA 1(GB), R0
+	STORE R0, 11(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 12(GB)
+	LOAD code.MatrixOperations.floatSum, R0
+	STORE R0, 13(GB)
+	LOAD code.MatrixOperations.intSum, R0
+	STORE R0, 14(GB)
+	LOAD code.MatrixOperations.floatMult, R0
+	STORE R0, 15(GB)
+	LOAD code.MatrixOperations.intMult, R0
+	STORE R0, 16(GB)
+	LOAD code.MatrixOperations.floatMultConst, R0
+	STORE R0, 17(GB)
+	LOAD code.MatrixOperations.intMultConst, R0
+	STORE R0, 18(GB)
+	LOAD code.MatrixOperations.floatTranspose, R0
+	STORE R0, 19(GB)
+	LOAD code.MatrixOperations.intTranspose, R0
+	STORE R0, 20(GB)
+	LEA 1(GB), R0
+	STORE R0, 21(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 22(GB)
+	LOAD code.MatrixUtils.floatMatrixPrint, R0
+	STORE R0, 23(GB)
+	LOAD code.MatrixUtils.intMatrixPrint, R0
+	STORE R0, 24(GB)
+	LOAD code.MatrixUtils.floatMatrixEqual, R0
+	STORE R0, 25(GB)
+	LOAD code.MatrixUtils.intMatrixEqual, R0
+	STORE R0, 26(GB)
+	LOAD code.MatrixUtils.floatMatrixCopy, R0
+	STORE R0, 27(GB)
+	LOAD code.MatrixUtils.intMatrixCopy, R0
+	STORE R0, 28(GB)
+	LOAD code.MatrixUtils.intToFloat, R0
+	STORE R0, 29(GB)
+	NEW #1, R2
+	BOV tas_plein
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.MatrixSet
+	POP R2
+	STORE R2, 30(GB)
+	NEW #1, R2
+	BOV tas_plein
+	LEA 21(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.MatrixUtils
+	POP R2
+	STORE R2, 31(GB)
+	NEW #1, R2
+	BOV tas_plein
+	LEA 11(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.MatrixOperations
+	POP R2
+	STORE R2, 32(GB)
+	LOAD #9, R2
+	LOAD #1, R3
+	LOAD R2, R5
+	ADD #2, R5
+	NEW R5, R4
+	BOV tas_plein
+	STORE R4, 33(GB)
+	STORE R2, 0(R4)
+	LEA 1(R4), R4
+	STORE R3, 0(R4)
+	SUB #2, R5
+debut.tab0:
+	CMP #0, R5
+	BLE fin.tab0
+	LEA 1(R4), R4
+	LOAD #0, R0
+	STORE R0, 0(R4)
+	SUB #1, R5
+	BRA debut.tab0
+fin.tab0:
+	LOAD #9, R2
+	LOAD #1, R3
+	LOAD R2, R5
+	ADD #2, R5
+	NEW R5, R4
+	BOV tas_plein
+	STORE R4, 34(GB)
+	STORE R2, 0(R4)
+	LEA 1(R4), R4
+	STORE R3, 0(R4)
+	SUB #2, R5
+debut.tab1:
+	CMP #0, R5
+	BLE fin.tab1
+	LEA 1(R4), R4
+	LOAD #0x0.0p0, R0
+	STORE R0, 0(R4)
+	SUB #1, R5
+	BRA debut.tab1
+fin.tab1:
+	LOAD #5, R2
+	LOAD #5, R3
+	LOAD R3, R5
+	MUL R2, R5
+	ADD #2, R5
+	NEW R5, R4
+	BOV tas_plein
+	STORE R4, 35(GB)
+	STORE R2, 0(R4)
+	LEA 1(R4), R4
+	STORE R3, 0(R4)
+	SUB #2, R5
+debut.tab2:
+	CMP #0, R5
+	BLE fin.tab2
+	LEA 1(R4), R4
+	LOAD #0, R0
+	STORE R0, 0(R4)
+	SUB #1, R5
+	BRA debut.tab2
+fin.tab2:
+	LOAD #5, R2
+	LOAD #5, R3
+	LOAD R3, R5
+	MUL R2, R5
+	ADD #2, R5
+	NEW R5, R4
+	BOV tas_plein
+	STORE R4, 36(GB)
+	STORE R2, 0(R4)
+	LEA 1(R4), R4
+	STORE R3, 0(R4)
+	SUB #2, R5
+debut.tab3:
+	CMP #0, R5
+	BLE fin.tab3
+	LEA 1(R4), R4
+	LOAD #0x0.0p0, R0
+	STORE R0, 0(R4)
+	SUB #1, R5
+	BRA debut.tab3
+fin.tab3:
+	LOAD #5, R2
+	LOAD #5, R3
+	LOAD R3, R5
+	MUL R2, R5
+	ADD #2, R5
+	NEW R5, R4
+	BOV tas_plein
+	STORE R4, 37(GB)
+	STORE R2, 0(R4)
+	LEA 1(R4), R4
+	STORE R3, 0(R4)
+	SUB #2, R5
+debut.tab4:
+	CMP #0, R5
+	BLE fin.tab4
+	LEA 1(R4), R4
+	LOAD #0x0.0p0, R0
+	STORE R0, 0(R4)
+	SUB #1, R5
+	BRA debut.tab4
+fin.tab4:
+	LOAD #5, R2
+	LOAD #5, R3
+	LOAD R3, R5
+	MUL R2, R5
+	ADD #2, R5
+	NEW R5, R4
+	BOV tas_plein
+	STORE R4, 38(GB)
+	STORE R2, 0(R4)
+	LEA 1(R4), R4
+	STORE R3, 0(R4)
+	SUB #2, R5
+debut.tab5:
+	CMP #0, R5
+	BLE fin.tab5
+	LEA 1(R4), R4
+	LOAD #0x0.0p0, R0
+	STORE R0, 0(R4)
+	SUB #1, R5
+	BRA debut.tab5
+fin.tab5:
+	LOAD #1, R2
+	LOAD 33(GB), R3
+	LOAD 1(R3), R3
+	LOAD #2, R0
+	LOAD 33(GB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab6:
+	CMP #0, R0
+	BLE fin.callTab6
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab6
+fin.callTab6:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD #0x1.4p1, R2
+	LOAD 34(GB), R3
+	LOAD 1(R3), R3
+	LOAD #2, R0
+	LOAD 34(GB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab7:
+	CMP #0, R0
+	BLE fin.callTab7
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab7
+fin.callTab7:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 33(GB), R2
+	LOAD 1(R2), R2
+	LOAD #2, R0
+	LOAD 33(GB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab8:
+	CMP #0, R0
+	BLE fin.callTab8
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab8
+fin.callTab8:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD R2, R1
+	WINT
+	WNL
+	LOAD 34(GB), R2
+	LOAD 1(R2), R2
+	LOAD #2, R0
+	LOAD 34(GB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab9:
+	CMP #0, R0
+	BLE fin.callTab9
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab9
+fin.callTab9:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD R2, R1
+	WFLOAT
+	WNL
+	ADDSP #2
+	LOAD 30(GB), R2
+	STORE R2, 0(SP)
+	LOAD 35(GB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 3(R2)
+	SUBSP #2
+	LOAD R0, R2
+	ADDSP #2
+	LOAD 30(GB), R2
+	STORE R2, 0(SP)
+	LOAD 37(GB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 4(R2)
+	SUBSP #2
+	LOAD R0, R2
+	ADDSP #2
+	LOAD 31(GB), R2
+	STORE R2, 0(SP)
+	LOAD 35(GB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 3(R2)
+	SUBSP #2
+	LOAD R0, R2
+	ADDSP #3
+	LOAD 31(GB), R2
+	STORE R2, 0(SP)
+	LOAD 35(GB), R2
+	STORE R2, -1(SP)
+	LOAD 36(GB), R2
+	STORE R2, -2(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 8(R2)
+	SUBSP #3
+	LOAD R0, R2
+	ADDSP #2
+	LOAD 31(GB), R2
+	STORE R2, 0(SP)
+	LOAD 36(GB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #2
+	LOAD R0, R2
+	ADDSP #3
+	LOAD 31(GB), R2
+	STORE R2, 0(SP)
+	LOAD 36(GB), R2
+	STORE R2, -1(SP)
+	LOAD 37(GB), R2
+	STORE R2, -2(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 4(R2)
+	SUBSP #3
+	LOAD R0, R2
+	CMP #0, R2
+	BEQ else_0
+	WSTR "true"
+	WNL
+	BRA fi_0
+else_0:
+	WSTR "false"
+	WNL
+fi_0:
+	ADDSP #3
+	LOAD 31(GB), R2
+	STORE R2, 0(SP)
+	LOAD 36(GB), R2
+	STORE R2, -1(SP)
+	LOAD 37(GB), R2
+	STORE R2, -2(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 6(R2)
+	SUBSP #3
+	LOAD R0, R2
+	ADDSP #3
+	LOAD 31(GB), R2
+	STORE R2, 0(SP)
+	LOAD 36(GB), R2
+	STORE R2, -1(SP)
+	LOAD 37(GB), R2
+	STORE R2, -2(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 4(R2)
+	SUBSP #3
+	LOAD R0, R2
+	CMP #0, R2
+	BEQ else_1
+	WSTR "true"
+	WNL
+	BRA fi_1
+else_1:
+	WSTR "false"
+	WNL
+fi_1:
+	LOAD #1, R2
+	FLOAT R2, R2
+	BOV arith_overflow
+	LOAD 37(GB), R3
+	LOAD 1(R3), R3
+	LOAD #1, R0
+	MUL R3, R0
+	LOAD #1, R1
+	ADD R1, R0
+	LOAD 37(GB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab10:
+	CMP #0, R0
+	BLE fin.callTab10
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab10
+fin.callTab10:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	ADDSP #3
+	LOAD 32(GB), R2
+	STORE R2, 0(SP)
+	LOAD 37(GB), R2
+	STORE R2, -1(SP)
+	LOAD #0x1.8p1, R2
+	STORE R2, -2(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 6(R2)
+	SUBSP #3
+	LOAD R0, R2
+	ADDSP #3
+	LOAD 32(GB), R2
+	STORE R2, 0(SP)
+	LOAD 36(GB), R2
+	STORE R2, -1(SP)
+	LOAD 37(GB), R2
+	STORE R2, -2(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #3
+	LOAD R0, R2
+	ADDSP #2
+	LOAD 31(GB), R2
+	STORE R2, 0(SP)
+	LOAD 36(GB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #2
+	LOAD R0, R2
+	LOAD #1, R2
+	FLOAT R2, R2
+	BOV arith_overflow
+	LOAD 37(GB), R3
+	LOAD 1(R3), R3
+	LOAD #2, R0
+	MUL R3, R0
+	LOAD #3, R1
+	ADD R1, R0
+	LOAD 37(GB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab11:
+	CMP #0, R0
+	BLE fin.callTab11
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab11
+fin.callTab11:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	ADDSP #3
+	LOAD 32(GB), R2
+	STORE R2, 0(SP)
+	LOAD 37(GB), R2
+	STORE R2, -1(SP)
+	LOAD 38(GB), R2
+	STORE R2, -2(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 8(R2)
+	SUBSP #3
+	LOAD R0, R2
+	ADDSP #2
+	LOAD 31(GB), R2
+	STORE R2, 0(SP)
+	LOAD 38(GB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #2
+	LOAD R0, R2
+	ADDSP #4
+	LOAD 32(GB), R2
+	STORE R2, 0(SP)
+	LOAD 36(GB), R2
+	STORE R2, -1(SP)
+	LOAD 37(GB), R2
+	STORE R2, -2(SP)
+	LOAD 38(GB), R2
+	STORE R2, -3(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 4(R2)
+	SUBSP #4
+	LOAD R0, R2
+	ADDSP #2
+	LOAD 31(GB), R2
+	STORE R2, 0(SP)
+	LOAD 38(GB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #2
+	LOAD R0, R2
+	HALT
+code.Object.equals:
+	PUSH R2
+	PUSH R3
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	CMP R2, R3
+	SEQ R0
+	POP R2
+	POP R3
+	RTS
+init.MatrixSet:
+	LOAD -2(LB), R1
+	RTS
+code.MatrixSet.floatSetIdentity:
+	TSTO #8
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_2
+	BRA endWhile_0
+startWhile_0:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_1
+startWhile_1:
+	LOAD 1(LB), R2
+	LOAD 2(LB), R3
+	CMP R3, R2
+	BNE else_3
+	LOAD #1, R2
+	FLOAT R2, R2
+	BOV arith_overflow
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab12:
+	CMP #0, R0
+	BLE fin.callTab12
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab12
+fin.callTab12:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	BRA fi_3
+else_3:
+	LOAD #0, R2
+	FLOAT R2, R2
+	BOV arith_overflow
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab13:
+	CMP #0, R0
+	BLE fin.callTab13
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab13
+fin.callTab13:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+fi_3:
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_1:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_1
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_0:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_0
+	BRA fi_2
+else_2:
+	WSTR "The matrix must be square"
+	WNL
+fi_2:
+	BRA fin.MatrixSet.floatSetIdentity
+fin.MatrixSet.floatSetIdentity:
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixSet.intSetIdentity:
+	TSTO #8
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_4
+	BRA endWhile_2
+startWhile_2:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_3
+startWhile_3:
+	LOAD 1(LB), R2
+	LOAD 2(LB), R3
+	CMP R3, R2
+	BNE else_5
+	LOAD #1, R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab14:
+	CMP #0, R0
+	BLE fin.callTab14
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab14
+fin.callTab14:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	BRA fi_5
+else_5:
+	LOAD #0, R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab15:
+	CMP #0, R0
+	BLE fin.callTab15
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab15
+fin.callTab15:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+fi_5:
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_3:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_3
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_2:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_2
+	BRA fi_4
+else_4:
+	WSTR "The matrix must be square"
+	WNL
+fi_4:
+	BRA fin.MatrixSet.intSetIdentity
+fin.MatrixSet.intSetIdentity:
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixSet.floatSetZero:
+	TSTO #6
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_4
+startWhile_4:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_5
+startWhile_5:
+	LOAD #0, R2
+	FLOAT R2, R2
+	BOV arith_overflow
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab16:
+	CMP #0, R0
+	BLE fin.callTab16
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab16
+fin.callTab16:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_5:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_5
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_4:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_4
+	BRA fin.MatrixSet.floatSetZero
+fin.MatrixSet.floatSetZero:
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixSet.intSetZero:
+	TSTO #6
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_6
+startWhile_6:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_7
+startWhile_7:
+	LOAD #0, R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab17:
+	CMP #0, R0
+	BLE fin.callTab17
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab17
+fin.callTab17:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_7:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_7
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_6:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_6
+	BRA fin.MatrixSet.intSetZero
+fin.MatrixSet.intSetZero:
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixSet.floatSetOne:
+	TSTO #6
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_8
+startWhile_8:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_9
+startWhile_9:
+	LOAD #1, R2
+	FLOAT R2, R2
+	BOV arith_overflow
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab18:
+	CMP #0, R0
+	BLE fin.callTab18
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab18
+fin.callTab18:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_9:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_9
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_8:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_8
+	BRA fin.MatrixSet.floatSetOne
+fin.MatrixSet.floatSetOne:
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixSet.intSetOne:
+	TSTO #6
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_10
+startWhile_10:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_11
+startWhile_11:
+	LOAD #1, R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab19:
+	CMP #0, R0
+	BLE fin.callTab19
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab19
+fin.callTab19:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_11:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_11
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_10:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_10
+	BRA fin.MatrixSet.intSetOne
+fin.MatrixSet.intSetOne:
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+init.MatrixOperations:
+	LOAD -2(LB), R1
+	RTS
+code.MatrixOperations.floatSum:
+	TSTO #8
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_6
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_6
+endAnd_0:
+	BRA endWhile_12
+startWhile_12:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_13
+startWhile_13:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD 1(LB), R0
+	MUL R2, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab20:
+	CMP #0, R0
+	BLE fin.callTab20
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab20
+fin.callTab20:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -4(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab21:
+	CMP #0, R0
+	BLE fin.callTab21
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab21
+fin.callTab21:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	ADD R3, R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab22:
+	CMP #0, R0
+	BLE fin.callTab22
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab22
+fin.callTab22:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_13:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_13
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_12:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_12
+	BRA fi_6
+else_6:
+	WSTR "Error: Incompatible sizes in floatSum"
+	WNL
+fi_6:
+	BRA fin.MatrixOperations.floatSum
+fin.MatrixOperations.floatSum:
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixOperations.intSum:
+	TSTO #8
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_7
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE else_7
+endAnd_1:
+	BRA endWhile_14
+startWhile_14:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_15
+startWhile_15:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD 1(LB), R0
+	MUL R2, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab23:
+	CMP #0, R0
+	BLE fin.callTab23
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab23
+fin.callTab23:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -4(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab24:
+	CMP #0, R0
+	BLE fin.callTab24
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab24
+fin.callTab24:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	ADD R3, R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab25:
+	CMP #0, R0
+	BLE fin.callTab25
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab25
+fin.callTab25:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_15:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_15
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_14:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_14
+	BRA fi_7
+else_7:
+	WSTR "Error: Incompatible sizes in intSum"
+	WNL
+fi_7:
+	BRA fin.MatrixOperations.intSum
+fin.MatrixOperations.intSum:
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixOperations.floatMult:
+	TSTO #18
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD #0, R2
+	STORE R2, 3(LB)
+	NEW #1, R2
+	BOV tas_plein
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.MatrixSet
+	POP R2
+	STORE R2, 4(LB)
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE endOr_0
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -5(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE endOr_0
+endOr_1:
+	LOAD -5(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BEQ else_8
+endOr_0:
+	WSTR "Error: Incompatible sizes in floatMult"
+	WNL
+	BRA fi_8
+else_8:
+	ADDSP #2
+	LOAD 4(LB), R2
+	STORE R2, 0(SP)
+	LOAD -5(LB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 4(R2)
+	SUBSP #2
+	LOAD R0, R2
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD #0, R2
+	STORE R2, 3(LB)
+	BRA endWhile_16
+startWhile_16:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_17
+startWhile_17:
+	LOAD #0, R2
+	STORE R2, 3(LB)
+	BRA endWhile_18
+startWhile_18:
+	LOAD -5(LB), R2
+	LOAD 1(R2), R2
+	LOAD 1(LB), R0
+	MUL R2, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -5(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab26:
+	CMP #0, R0
+	BLE fin.callTab26
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab26
+fin.callTab26:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 3(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab27:
+	CMP #0, R0
+	BLE fin.callTab27
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab27
+fin.callTab27:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	LOAD -4(LB), R4
+	LOAD 1(R4), R4
+	LOAD 3(LB), R0
+	MUL R4, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -4(LB), R4
+	LEA 1(R4), R4
+	LEA 1(R4), R4
+debut.callTab28:
+	CMP #0, R0
+	BLE fin.callTab28
+	LEA 1(R4), R4
+	SUB #1, R0
+	BRA debut.callTab28
+fin.callTab28:
+	LOAD R4, R1
+	LOAD 0(R4), R4
+	MUL R4, R3
+	BOV arith_overflow
+	ADD R3, R2
+	LOAD -5(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -5(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab29:
+	CMP #0, R0
+	BLE fin.callTab29
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab29
+fin.callTab29:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 3(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 3(LB)
+endWhile_18:
+	LOAD 3(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_18
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_17:
+	LOAD 2(LB), R2
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_17
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_16:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_16
+fi_8:
+	BRA fin.MatrixOperations.floatMult
+fin.MatrixOperations.floatMult:
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixOperations.intMult:
+	TSTO #18
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	PUSH R7
+	PUSH R8
+	PUSH R9
+	PUSH R10
+	PUSH R11
+	PUSH R12
+	PUSH R13
+	PUSH R14
+	PUSH R15
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD #0, R2
+	STORE R2, 3(LB)
+	NEW #1, R2
+	BOV tas_plein
+	LEA 3(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.MatrixSet
+	POP R2
+	STORE R2, 4(LB)
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE endOr_2
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -5(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE endOr_2
+endOr_3:
+	LOAD -5(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BEQ else_9
+endOr_2:
+	WSTR "Error: Incompatible sizes in intMult"
+	WNL
+	BRA fi_9
+else_9:
+	ADDSP #2
+	LOAD 4(LB), R2
+	STORE R2, 0(SP)
+	LOAD -5(LB), R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	CMP #null, R2
+	BEQ dereferencement_de_null
+	LOAD 0(R2), R2
+	BSR 5(R2)
+	SUBSP #2
+	LOAD R0, R2
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD #0, R2
+	STORE R2, 3(LB)
+	BRA endWhile_19
+startWhile_19:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_20
+startWhile_20:
+	LOAD #0, R2
+	STORE R2, 3(LB)
+	BRA endWhile_21
+startWhile_21:
+	LOAD -5(LB), R2
+	LOAD 1(R2), R2
+	LOAD 1(LB), R0
+	MUL R2, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -5(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab30:
+	CMP #0, R0
+	BLE fin.callTab30
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab30
+fin.callTab30:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 3(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab31:
+	CMP #0, R0
+	BLE fin.callTab31
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab31
+fin.callTab31:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	LOAD -4(LB), R4
+	LOAD 1(R4), R4
+	LOAD 3(LB), R0
+	MUL R4, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -4(LB), R4
+	LEA 1(R4), R4
+	LEA 1(R4), R4
+debut.callTab32:
+	CMP #0, R0
+	BLE fin.callTab32
+	LEA 1(R4), R4
+	SUB #1, R0
+	BRA debut.callTab32
+fin.callTab32:
+	LOAD R4, R1
+	LOAD 0(R4), R4
+	MUL R4, R3
+	ADD R3, R2
+	LOAD -5(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -5(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab33:
+	CMP #0, R0
+	BLE fin.callTab33
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab33
+fin.callTab33:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 3(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 3(LB)
+endWhile_21:
+	LOAD 3(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_21
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_20:
+	LOAD 2(LB), R2
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_20
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_19:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_19
+fi_9:
+	BRA fin.MatrixOperations.intMult
+fin.MatrixOperations.intMult:
+	POP R15
+	POP R14
+	POP R13
+	POP R12
+	POP R11
+	POP R10
+	POP R9
+	POP R8
+	POP R7
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixOperations.floatMultConst:
+	TSTO #8
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	LOAD R3, R5
+	MUL R2, R5
+	ADD #2, R5
+	NEW R5, R4
+	BOV tas_plein
+	STORE R4, 1(LB)
+	STORE R2, 0(R4)
+	LEA 1(R4), R4
+	STORE R3, 0(R4)
+	SUB #2, R5
+debut.tab34:
+	CMP #0, R5
+	BLE fin.tab34
+	LEA 1(R4), R4
+	LOAD #0x0.0p0, R0
+	STORE R0, 0(R4)
+	SUB #1, R5
+	BRA debut.tab34
+fin.tab34:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD #0, R2
+	STORE R2, 3(LB)
+	BRA endWhile_22
+startWhile_22:
+	LOAD #0, R2
+	STORE R2, 3(LB)
+	BRA endWhile_23
+startWhile_23:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD 2(LB), R0
+	MUL R2, R0
+	LOAD 3(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab35:
+	CMP #0, R0
+	BLE fin.callTab35
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab35
+fin.callTab35:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD -4(LB), R3
+	MUL R3, R2
+	BOV arith_overflow
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD 2(LB), R0
+	MUL R3, R0
+	LOAD 3(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab36:
+	CMP #0, R0
+	BLE fin.callTab36
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab36
+fin.callTab36:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 3(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 3(LB)
+endWhile_23:
+	LOAD 3(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_23
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_22:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_22
+	BRA fin.MatrixOperations.floatMultConst
+fin.MatrixOperations.floatMultConst:
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixOperations.intMultConst:
+	TSTO #8
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	LOAD R3, R5
+	MUL R2, R5
+	ADD #2, R5
+	NEW R5, R4
+	BOV tas_plein
+	STORE R4, 1(LB)
+	STORE R2, 0(R4)
+	LEA 1(R4), R4
+	STORE R3, 0(R4)
+	SUB #2, R5
+debut.tab37:
+	CMP #0, R5
+	BLE fin.tab37
+	LEA 1(R4), R4
+	LOAD #0, R0
+	STORE R0, 0(R4)
+	SUB #1, R5
+	BRA debut.tab37
+fin.tab37:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD #0, R2
+	STORE R2, 3(LB)
+	BRA endWhile_24
+startWhile_24:
+	LOAD #0, R2
+	STORE R2, 3(LB)
+	BRA endWhile_25
+startWhile_25:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD 2(LB), R0
+	MUL R2, R0
+	LOAD 3(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab38:
+	CMP #0, R0
+	BLE fin.callTab38
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab38
+fin.callTab38:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD -4(LB), R3
+	MUL R3, R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD 2(LB), R0
+	MUL R3, R0
+	LOAD 3(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab39:
+	CMP #0, R0
+	BLE fin.callTab39
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab39
+fin.callTab39:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 3(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 3(LB)
+endWhile_25:
+	LOAD 3(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_25
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_24:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_24
+	BRA fin.MatrixOperations.intMultConst
+fin.MatrixOperations.intMultConst:
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixOperations.floatTranspose:
+	TSTO #7
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE endOr_4
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BEQ else_10
+endOr_4:
+	WSTR "Error: Incompatible sizes in floatTranspose"
+	WNL
+	BRA fi_10
+else_10:
+	BRA endWhile_26
+startWhile_26:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_27
+startWhile_27:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD 2(LB), R0
+	MUL R2, R0
+	LOAD 1(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab40:
+	CMP #0, R0
+	BLE fin.callTab40
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab40
+fin.callTab40:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -4(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab41:
+	CMP #0, R0
+	BLE fin.callTab41
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab41
+fin.callTab41:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_27:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_27
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_26:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_26
+fi_10:
+	BRA fin.MatrixOperations.floatTranspose
+fin.MatrixOperations.floatTranspose:
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixOperations.intTranspose:
+	TSTO #7
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE endOr_5
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BEQ else_11
+endOr_5:
+	WSTR "Error: Incompatible sizes in intTranspose"
+	WNL
+	BRA fi_11
+else_11:
+	BRA endWhile_28
+startWhile_28:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_29
+startWhile_29:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD 2(LB), R0
+	MUL R2, R0
+	LOAD 1(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab42:
+	CMP #0, R0
+	BLE fin.callTab42
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab42
+fin.callTab42:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -4(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab43:
+	CMP #0, R0
+	BLE fin.callTab43
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab43
+fin.callTab43:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_29:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_29
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_28:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_28
+fi_11:
+	BRA fin.MatrixOperations.intTranspose
+fin.MatrixOperations.intTranspose:
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+init.MatrixUtils:
+	LOAD -2(LB), R1
+	RTS
+code.MatrixUtils.floatMatrixPrint:
+	TSTO #6
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	WSTR "["
+	WNL
+	BRA endWhile_30
+startWhile_30:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_31
+startWhile_31:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD 1(LB), R0
+	MUL R2, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab44:
+	CMP #0, R0
+	BLE fin.callTab44
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab44
+fin.callTab44:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD R2, R1
+	WFLOAT
+	WSTR " "
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_31:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_31
+	WNL
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_30:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_30
+	WSTR "]"
+	WNL
+	BRA fin.MatrixUtils.floatMatrixPrint
+fin.MatrixUtils.floatMatrixPrint:
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixUtils.intMatrixPrint:
+	TSTO #6
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	WSTR "["
+	WNL
+	BRA endWhile_32
+startWhile_32:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_33
+startWhile_33:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD 1(LB), R0
+	MUL R2, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab45:
+	CMP #0, R0
+	BLE fin.callTab45
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab45
+fin.callTab45:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD R2, R1
+	WINT
+	WSTR " "
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_33:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_33
+	WNL
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_32:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_32
+	WSTR "]"
+	WNL
+	BRA fin.MatrixUtils.intMatrixPrint
+fin.MatrixUtils.intMatrixPrint:
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixUtils.floatMatrixEqual:
+	TSTO #6
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE endOr_6
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BEQ else_12
+endOr_6:
+	LOAD #0, R2
+	LOAD R2, R0
+	BRA fin.MatrixUtils.floatMatrixEqual
+	BRA fi_12
+else_12:
+fi_12:
+	BRA endWhile_34
+startWhile_34:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_35
+startWhile_35:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD 1(LB), R0
+	MUL R2, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab46:
+	CMP #0, R0
+	BLE fin.callTab46
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab46
+fin.callTab46:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -4(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab47:
+	CMP #0, R0
+	BLE fin.callTab47
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab47
+fin.callTab47:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	CMP R3, R2
+	BEQ else_13
+	LOAD #0, R2
+	LOAD R2, R0
+	BRA fin.MatrixUtils.floatMatrixEqual
+	BRA fi_13
+else_13:
+fi_13:
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_35:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_35
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_34:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_34
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MatrixUtils.floatMatrixEqual
+	BRA no_return
+fin.MatrixUtils.floatMatrixEqual:
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixUtils.intMatrixEqual:
+	TSTO #6
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE endOr_7
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BEQ else_14
+endOr_7:
+	LOAD #0, R2
+	LOAD R2, R0
+	BRA fin.MatrixUtils.intMatrixEqual
+	BRA fi_14
+else_14:
+fi_14:
+	BRA endWhile_36
+startWhile_36:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_37
+startWhile_37:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD 1(LB), R0
+	MUL R2, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab48:
+	CMP #0, R0
+	BLE fin.callTab48
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab48
+fin.callTab48:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -4(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab49:
+	CMP #0, R0
+	BLE fin.callTab49
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab49
+fin.callTab49:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	CMP R3, R2
+	BEQ else_15
+	LOAD #0, R2
+	LOAD R2, R0
+	BRA fin.MatrixUtils.intMatrixEqual
+	BRA fi_15
+else_15:
+fi_15:
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_37:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_37
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_36:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_36
+	LOAD #1, R2
+	LOAD R2, R0
+	BRA fin.MatrixUtils.intMatrixEqual
+	BRA no_return
+fin.MatrixUtils.intMatrixEqual:
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixUtils.floatMatrixCopy:
+	TSTO #7
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE endOr_8
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BEQ else_16
+endOr_8:
+	WSTR "Error: Incompatible sizes in floatMatrixCopy"
+	WNL
+	BRA fi_16
+else_16:
+	BRA endWhile_38
+startWhile_38:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_39
+startWhile_39:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD 1(LB), R0
+	MUL R2, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab50:
+	CMP #0, R0
+	BLE fin.callTab50
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab50
+fin.callTab50:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -4(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab51:
+	CMP #0, R0
+	BLE fin.callTab51
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab51
+fin.callTab51:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_39:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_39
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_38:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_38
+fi_16:
+	BRA fin.MatrixUtils.floatMatrixCopy
+fin.MatrixUtils.floatMatrixCopy:
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixUtils.intMatrixCopy:
+	TSTO #7
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE endOr_9
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BEQ else_17
+endOr_9:
+	WSTR "Error: Incompatible sizes in intMatrixCopy"
+	WNL
+	BRA fi_17
+else_17:
+	BRA endWhile_40
+startWhile_40:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_41
+startWhile_41:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD 1(LB), R0
+	MUL R2, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab52:
+	CMP #0, R0
+	BLE fin.callTab52
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab52
+fin.callTab52:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -4(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab53:
+	CMP #0, R0
+	BLE fin.callTab53
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab53
+fin.callTab53:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_41:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_41
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_40:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_40
+fi_17:
+	BRA fin.MatrixUtils.intMatrixCopy
+fin.MatrixUtils.intMatrixCopy:
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+code.MatrixUtils.intToFloat:
+	TSTO #7
+	BOV pile_pleine
+	PUSH R2
+	PUSH R3
+	PUSH R4
+	PUSH R5
+	PUSH R6
+	LOAD #0, R2
+	STORE R2, 1(LB)
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	LOAD -3(LB), R2
+	LOAD 0(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BNE endOr_10
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BEQ else_18
+endOr_10:
+	WSTR "Error: Incompatible sizes in intToFloat"
+	WNL
+	BRA fi_18
+else_18:
+	BRA endWhile_42
+startWhile_42:
+	LOAD #0, R2
+	STORE R2, 2(LB)
+	BRA endWhile_43
+startWhile_43:
+	LOAD -3(LB), R2
+	LOAD 1(R2), R2
+	LOAD 1(LB), R0
+	MUL R2, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -3(LB), R2
+	LEA 1(R2), R2
+	LEA 1(R2), R2
+debut.callTab54:
+	CMP #0, R0
+	BLE fin.callTab54
+	LEA 1(R2), R2
+	SUB #1, R0
+	BRA debut.callTab54
+fin.callTab54:
+	LOAD R2, R1
+	LOAD 0(R2), R2
+	FLOAT R2, R2
+	BOV arith_overflow
+	LOAD -4(LB), R3
+	LOAD 1(R3), R3
+	LOAD 1(LB), R0
+	MUL R3, R0
+	LOAD 2(LB), R1
+	ADD R1, R0
+	LOAD -4(LB), R3
+	LEA 1(R3), R3
+	LEA 1(R3), R3
+debut.callTab55:
+	CMP #0, R0
+	BLE fin.callTab55
+	LEA 1(R3), R3
+	SUB #1, R0
+	BRA debut.callTab55
+fin.callTab55:
+	LOAD R3, R1
+	LOAD 0(R3), R3
+	STORE R2, 0(R1)
+	LOAD 2(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 2(LB)
+endWhile_43:
+	LOAD 2(LB), R2
+	LOAD -3(LB), R3
+	LOAD 1(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_43
+	LOAD 1(LB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 1(LB)
+endWhile_42:
+	LOAD 1(LB), R2
+	LOAD -3(LB), R3
+	LOAD 0(R3), R3
+	LOAD R3, R0
+	CMP R3, R2
+	BLT startWhile_42
+fi_18:
+	BRA fin.MatrixUtils.intToFloat
+fin.MatrixUtils.intToFloat:
+	POP R6
+	POP R5
+	POP R4
+	POP R3
+	POP R2
+	RTS
+pile_pleine:
+	WSTR "Error: stack overflow."
+	WNL
+	ERROR
+no_return:
+	WSTR "Error : no return after executing a method"
+	WNL
+	ERROR
+dereferencement_de_null:
+	WSTR "Error : dereferencing of null"
+	WNL
+	ERROR
+tas_plein:
+	WSTR "Error: heap full"
+	WNL
+	ERROR
+arith_overflow:
+	WSTR "Error: arithmetique overflow"
+	WNL
+	ERROR

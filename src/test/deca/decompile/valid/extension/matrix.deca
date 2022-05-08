@@ -1,0 +1,6 @@
+// Programme testant la décompilation de matrices
+
+{
+    int[1, 2] tab;
+    float[99] array;
+}

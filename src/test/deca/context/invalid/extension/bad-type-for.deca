@@ -1,0 +1,11 @@
+//Programme invalide testant for each.
+//erreur ligne 8, wrong type
+
+{
+    int[3] a = {1,2,3};
+    int c = 0;
+
+    for( float b : a){
+        c = c + b;
+    }
+}

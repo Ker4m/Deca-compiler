@@ -1,0 +1,43 @@
+{
+    boolean v = true;
+    boolean f = false;
+    boolean c;
+    int i = 1;
+
+    print("v && f = ");
+    if(v && f){
+        println("true");
+    } else {
+        println("false");
+    }
+
+        print("a || b = ");
+    if(v || f){
+        println("true");
+    } else {
+        println("false");
+    }
+
+
+    c = 1<7;
+    print("c = ");
+    if(c){
+        println("true");
+    } else {
+        println("false");
+    }
+        print("!c = ");
+    if(!c){
+        println("true");
+    } else {
+        println("false");
+    }
+
+    println();
+    while(i < 11){
+        println(i);
+        i = i + 1;
+    }
+
+
+}

@@ -1,0 +1,9 @@
+// Description:
+//    Programme valide ayant pour but de tester le et logique.
+//
+// Resultats:
+//    c=true;
+
+{
+    boolean c = (true && true);
+}

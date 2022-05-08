@@ -1,0 +1,24 @@
+// Description:
+//    Programme valide ayant pour but de tester les setter/getter.
+//
+// Resultats:
+//    1
+//
+
+class MaClasse{
+    int a;
+
+    void setA(int a){
+        this.a = a;
+    }
+
+    int getA(){
+        return this.a;
+    }
+}
+
+{
+    MaClasse c = new MaClasse();
+    c.setA(1);
+    println(c.getA());
+}

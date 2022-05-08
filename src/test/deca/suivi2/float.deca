@@ -1,0 +1,24 @@
+{
+    float x = 1.0;
+    float y = 2.5;
+    float z;
+
+    z = 2.0*y + 4.0*x;
+    println("z = ", z);
+
+    z = z / 2.0;
+    println("z = ", z);
+
+    x = -1.0;
+    y = -7.0;
+    // -1*(-7) + 3*(-7)
+    z = x*y + 3.0*y;
+    println("z = ", z);
+    printlnx("En hexa : z = ", z);
+
+    print("Saisissez un flottant : ");
+    x = readFloat();
+    print("On l'ajoute au dernier résultat : ");
+    print(z + x);
+
+}

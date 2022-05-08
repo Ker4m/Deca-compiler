@@ -1,0 +1,14 @@
+\babel@toc {french}{}\relax 
+\contentsline {section}{\numberline {1}Compétences de l'équipe}{3}{}%
+\contentsline {subsection}{\numberline {1.1}Fiches d'évaluation}{3}{}%
+\contentsline {subsection}{\numberline {1.2}Matrice SWOT}{8}{}%
+\contentsline {section}{\numberline {2}Valeurs communes}{8}{}%
+\contentsline {section}{\numberline {3}Gestion de projet}{9}{}%
+\contentsline {subsection}{\numberline {3.1}Méthode utilisée}{9}{}%
+\contentsline {subsection}{\numberline {3.2}Outils utilisés}{10}{}%
+\contentsline {subsection}{\numberline {3.3}Rôles}{10}{}%
+\contentsline {section}{\numberline {4}Communication au sein de l'équipe}{11}{}%
+\contentsline {subsection}{\numberline {4.1}Organisation de la communication}{11}{}%
+\contentsline {subsection}{\numberline {4.2}Outils}{11}{}%
+\contentsline {subsection}{\numberline {4.3}Réunions}{12}{}%
+\contentsline {subsection}{\numberline {4.4}Gestion des difficultés}{12}{}%

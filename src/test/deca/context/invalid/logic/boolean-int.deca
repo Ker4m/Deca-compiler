@@ -1,0 +1,5 @@
+// Programme testant boolean && int
+
+{
+    if (true && 2) {}
+}

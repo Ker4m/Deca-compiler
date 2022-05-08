@@ -1,0 +1,9 @@
+// Description:
+//    Programme minimaliste utilisant println.
+//
+// Resultats:
+//    erreur ligne 8
+
+{
+    println("\t");
+}

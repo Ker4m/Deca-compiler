@@ -1,0 +1,282 @@
+	ADDSP #17
+; 
+; ====================================================
+;                       VTABLES                      |
+; ====================================================
+; Construction de la table des methodes de Object
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+; Construction de la table des méthodes de A
+	LEA 1(GB), R0
+	STORE R0, 3(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 4(GB)
+	LOAD code.A.getX, R0
+	STORE R0, 5(GB)
+	LOAD code.A.setX, R0
+	STORE R0, 6(GB)
+	LOAD code.A.getY, R0
+	STORE R0, 7(GB)
+	LOAD code.A.setY, R0
+	STORE R0, 8(GB)
+; Construction de la table des méthodes de B
+	LEA 3(GB), R0
+	STORE R0, 9(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 10(GB)
+	LOAD code.B.getZ, R0
+	STORE R0, 11(GB)
+	LOAD code.B.setZ, R0
+	STORE R0, 12(GB)
+	LOAD code.B.getX, R0
+	STORE R0, 13(GB)
+	LOAD code.B.setX, R0
+	STORE R0, 14(GB)
+	LOAD code.B.getY, R0
+	STORE R0, 15(GB)
+	LOAD code.B.setY, R0
+	STORE R0, 16(GB)
+; 
+; ====================================================
+;                     MAIN PROGRAM                   |
+; ====================================================
+; Beginning of the variables declarations:
+	NEW #6, R2
+	LEA 9(GB), R0
+	STORE R0, 0(R2)
+	PUSH R2
+	BSR init.B
+	POP R2
+	STORE R2, 17(GB)
+; Beginning of main instructions:
+; new inst
+	ADDSP #2
+	LOAD 17(GB), R2
+	STORE R2, 0(SP)
+	LOAD #11, R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	LOAD 0(R2), R2
+	BSR 5(R2)
+	SUBSP #2
+	LOAD R0, R2
+; new inst
+	ADDSP #2
+	LOAD 17(GB), R2
+	STORE R2, 0(SP)
+	LOAD #7, R2
+	STORE R2, -1(SP)
+	LOAD 0(SP), R2
+	LOAD 0(R2), R2
+	BSR 7(R2)
+	SUBSP #2
+	LOAD R0, R2
+; new inst
+	WSTR "b.getX() = "
+	ADDSP #1
+	LOAD 17(GB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	LOAD 0(R2), R2
+	BSR 4(R2)
+	SUBSP #1
+	LOAD R0, R2
+	LOAD R0, R1
+	WINT
+	WNL
+; new inst
+	WSTR "a.getY() = "
+	ADDSP #1
+	LOAD 17(GB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	LOAD 0(R2), R2
+	BSR 6(R2)
+	SUBSP #1
+	LOAD R0, R2
+	LOAD R0, R1
+	WINT
+	WNL
+; new inst
+	WSTR "b.getZ() = "
+	ADDSP #1
+	LOAD 17(GB), R2
+	STORE R2, 0(SP)
+	LOAD 0(SP), R2
+	LOAD 0(R2), R2
+	BSR 2(R2)
+	SUBSP #1
+	LOAD R0, R2
+	LOAD R0, R1
+	WINT
+	WNL
+	HALT
+; end main program
+; 
+; ====================================================
+;                  CLASS : OBJECT                    |
+; ====================================================
+; 
+; ~~~~~~~~~~~~~~~~ Method : equals() ~~~~~~~~~~~~~~~~~~
+code.Object.equals:
+	PUSH R2
+	PUSH R3
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	CMP R2, R3
+	SEQ R0
+	POP R2
+	POP R3
+	RTS
+; 
+; ====================================================
+;                   CLASS A
+; ====================================================
+; 
+; ~~~~~~~~~~~ Initialization of fields ~~~~~~~~~~~~~~~
+init.A:
+	LOAD -2(LB), R1
+	LOAD #0, R0
+	STORE R0, 1(R1)
+	LOAD #0, R0
+	STORE R0, 2(R1)
+	RTS
+; ~~~~~~~~~~~ Initialization of Methods ~~~~~~~~~~~~~~
+code.A.getX:
+	PUSH R2
+; new inst
+	LOAD -2(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD R2, R0
+	BRA fin.A.getX
+fin.A.getX:
+	POP R2
+	RTS
+code.A.setX:
+	PUSH R2
+	PUSH R3
+; new inst
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 1(R2)
+	BRA fin.A.setX
+fin.A.setX:
+	POP R3
+	POP R2
+	RTS
+code.A.getY:
+	PUSH R2
+; new inst
+	LOAD -2(LB), R2
+	LOAD 2(R2), R2
+	LOAD R2, R0
+	LOAD R2, R0
+	BRA fin.A.getY
+fin.A.getY:
+	POP R2
+	RTS
+code.A.setY:
+	PUSH R2
+	PUSH R3
+; new inst
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 2(R2)
+	BRA fin.A.setY
+fin.A.setY:
+	POP R3
+	POP R2
+	RTS
+; 
+; ====================================================
+;                   CLASS B
+; ====================================================
+; 
+; ~~~~~~~~~~~ Initialization of fields ~~~~~~~~~~~~~~~
+init.B:
+	LOAD -2(LB), R0
+	PUSH R0
+	BSR init.A
+	SUBSP #1
+	LOAD -2(LB), R1
+	LOAD #3, R0
+	STORE R0, 3(R1)
+	LOAD #0, R0
+	STORE R0, 1(R1)
+	LOAD #0, R0
+	STORE R0, 2(R1)
+	RTS
+; ~~~~~~~~~~~ Initialization of Methods ~~~~~~~~~~~~~~
+code.B.getZ:
+	PUSH R2
+; new inst
+	LOAD -2(LB), R2
+	LOAD 3(R2), R2
+	LOAD R2, R0
+	LOAD R2, R0
+	BRA fin.B.getZ
+fin.B.getZ:
+	POP R2
+	RTS
+code.B.setZ:
+	PUSH R2
+	PUSH R3
+; new inst
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 3(R2)
+	BRA fin.B.setZ
+fin.B.setZ:
+	POP R3
+	POP R2
+	RTS
+code.B.getX:
+	PUSH R2
+; new inst
+	LOAD -2(LB), R2
+	LOAD 1(R2), R2
+	LOAD R2, R0
+	LOAD R2, R0
+	BRA fin.B.getX
+fin.B.getX:
+	POP R2
+	RTS
+code.B.setX:
+	PUSH R2
+	PUSH R3
+; new inst
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 1(R2)
+	BRA fin.B.setX
+fin.B.setX:
+	POP R3
+	POP R2
+	RTS
+code.B.getY:
+	PUSH R2
+; new inst
+	LOAD -2(LB), R2
+	LOAD 2(R2), R2
+	LOAD R2, R0
+	LOAD R2, R0
+	BRA fin.B.getY
+fin.B.getY:
+	POP R2
+	RTS
+code.B.setY:
+	PUSH R2
+	PUSH R3
+; new inst
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	STORE R3, 2(R2)
+	BRA fin.B.setY
+fin.B.setY:
+	POP R3
+	POP R2
+	RTS
+; 

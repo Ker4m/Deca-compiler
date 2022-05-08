@@ -1,0 +1,17 @@
+{
+    int justePrix = 72, prix = 0;
+
+    while(prix != 72){
+        print("Entrez un prix : ");
+        prix = readInt();
+        if(prix > justePrix){
+            println("Le juste prix est moins élevé");
+        }
+        else if(prix < justePrix){
+                println("Le juste prix est plus élevé");
+            }
+            else{
+                println("Bravo, vous avez trouvé le juste prix !");
+            }
+    }
+}

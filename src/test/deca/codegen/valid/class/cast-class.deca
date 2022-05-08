@@ -1,0 +1,17 @@
+// Description:
+//    Programme minimaliste testant le cast entre classe.
+//
+// Resultats:
+//    
+
+class A{
+    int a = 1;
+}
+
+class B extends A{}
+
+{
+    B b = new B();
+    A a = (A) (b);
+    println(a.a);
+}

@@ -1,0 +1,9 @@
+// Description:
+//    Programme minimaliste utilisant printx.
+//
+// Resultats:
+//    Hello
+
+{
+        printx("Hello");
+}

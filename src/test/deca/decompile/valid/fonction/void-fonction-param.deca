@@ -1,0 +1,15 @@
+// Description:
+//    Programme valide ayant pour but de tester les fonctions.
+//
+// Resultats:
+//    2
+
+class MaClasse{
+    void test(int a){
+        print(a);
+    }
+}
+
+{
+    test(2);
+}

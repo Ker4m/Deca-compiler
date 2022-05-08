@@ -1,0 +1,35 @@
+// test different type of return
+
+// results :
+//  1
+//  5
+//  11
+//
+
+
+
+class Test {
+    int a = 1;
+
+    int returnField(){
+        return a;
+    }
+
+    int returnParam(int p){
+        return p;
+    }
+
+    int returnLocalVar(){
+        int c = 11;
+        return c;
+    }
+
+}
+/* Main */
+{
+    Test t = new Test();
+    println(t.returnField());
+    println(t.returnParam(5));
+    println(t.returnLocalVar());
+
+}

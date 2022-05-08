@@ -1,0 +1,5 @@
+// Programme affichant la décompilation de null
+
+{
+    null;
+}

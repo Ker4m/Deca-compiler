@@ -1,0 +1,8 @@
+//Test valide instance of
+
+class A{}
+
+{
+    A a = new A();
+    boolean b = a instanceof A;
+}

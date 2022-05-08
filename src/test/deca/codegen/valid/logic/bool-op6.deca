@@ -1,0 +1,14 @@
+// Description:
+//    Programme valide testant l'affectation d'une operation logique à un booleen.
+//
+// Resultats:
+//    ok
+
+{
+    boolean b = true && false;
+    boolean toto = false || true;
+    b = false || b;
+    if(!b){
+        println("ok");
+    }
+}

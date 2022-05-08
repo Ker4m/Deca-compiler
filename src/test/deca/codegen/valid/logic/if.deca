@@ -1,0 +1,15 @@
+{
+    if(true){
+        println("ok");
+    }
+    else{
+        println("erreur");
+    }
+
+    if(!true){
+        println("erreur");
+    }
+    else{
+        println("ok");
+    }
+}

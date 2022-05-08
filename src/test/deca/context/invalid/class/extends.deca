@@ -1,0 +1,20 @@
+// invalide : erreur ligne 9, a n'est pas sous-type de B.
+
+class A{
+    protected int b;
+}
+
+class C{
+    void m(){
+        A a = new A();
+        B b = new B();
+        println(b.getB(a));
+    }
+}
+
+class B extends C {
+    int getB(){
+        return this.b;
+    }
+}
+

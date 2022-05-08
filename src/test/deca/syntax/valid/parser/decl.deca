@@ -1,0 +1,9 @@
+// Description:
+//    Programme minimaliste réalisant une affectation.
+//
+// Resultats:
+//    ok
+
+{
+    int a;
+}

@@ -1,0 +1,6 @@
+// Programme testant une condition qui n'est pas un booléen
+
+{
+    int i = 7;
+    if (i) {}
+}

@@ -1,0 +1,29 @@
+{
+    if(1 < 2){
+        println("ok");
+    }
+    else{
+        println("erreur");
+    }
+
+    if(1 > 2){
+        println("erreur");
+    }
+    else{
+        println("ok");
+    }
+    
+    if(1 >= 1){
+        println("ok");
+    }
+    else{
+        println("erreur");
+    }
+
+    if(1 <= 1){
+        println("ok");
+    }
+    else{
+        println("erreur");
+    }
+}

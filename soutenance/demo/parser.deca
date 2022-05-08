@@ -1,0 +1,4 @@
+{
+	int monEntier = false;
+	print("Mon entier vaut :", monEntier);
+}

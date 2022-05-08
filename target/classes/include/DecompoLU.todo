@@ -1,0 +1,225 @@
+
+
+class DecompoLU extends Matrix{
+
+   int n, pivsign; 
+   int[] piv;
+   float[] LU;
+
+   void LUDecomposition (float[] A) {
+    
+      int[m] piv;
+      int i = 0;
+      float[n] rowLU;
+      float[n] colLU;
+
+      int j = 0;
+      int k;
+      float s = 0;
+      int l = 0;
+      int p;
+      int index = 0;
+      double t;
+      this.LU = A.matrixCopy();
+      n = A.length;
+      while (i < n) {
+         piv[i] = i;
+         i = i + 1;
+      }
+
+      pivsign = 1;
+      i = 0;
+      while (j < n) {
+         while (i < n) {
+            /* ON RECUPERE LA jème COLONNE */
+            colLU[i] = LU[i, j];
+            i = i + 1;
+        }
+
+        while (i < n) {
+            rowLU = LU[i];
+            if (i < j) {
+                k = i;
+            }
+            else{
+                k = j;
+            }
+            while (l < k) {
+               s  = s + rowLU[l]*colLU[l];
+               l = l + 1;
+            }
+            rowLU[j] = colLU[i] - s;
+            i = i + 1;
+        }
+   
+        /* TROUVER LE PIVOT ET ECHANGER SI BESOIN */ 
+
+        p = j;
+        i = 0;
+        while (i < n){
+
+            if (colLU[i] < 0) {
+                absi = -colLU[i];
+            }
+            else {
+                absi = colLU[i];
+            }
+
+            if (colLU[p] < 0) {
+                absp = -colLU[p];
+            }
+            else {
+                absp = colLU[p];
+            }
+
+            if (absi > absp) {
+               p = i;
+            }
+            i = i + 1;
+         }
+         
+         if (p != j) {
+            while (index < n) {
+               t = LU[p, index];
+               LU[p, index] = LU[j, index];
+               LU[j, index] = t;
+               index = index + 1;
+            }
+            k = piv[p];
+            piv[p] = piv[j];
+            piv[j] = k;
+            pivsign = -pivsign;
+         }
+         
+         if (j < n && LU[j, j] != 0) {
+            while (i < n) {
+               LU[i, j] = LU[i, j] / LU[j, j];
+               i = i + 1;
+            }
+         }
+         j = j + 1;
+      }
+   }
+
+   /* ON VERIFIE QUE LA MATRICE N'A PAS DE 0 SUR LA DIAGONALE */
+
+   boolean isNonsingular () {
+      j = 0;
+      while (j < n) {
+         if (LU[j, j] == 0){
+            return false;
+         }
+         j = j + 1;
+      }
+      return true;
+   }
+
+   /* CALCUL DE L */
+
+   float[] getL() {
+      float[n,n] X;
+      int i = 0, j = 0;
+      L = matrixCopy(X);
+      while (i < n) {
+         while (j < n) {
+            if (i > j) {
+               L[i, j] = LU[i, j];
+            } else if (i == j) {
+               L[i, j] = 1.0;
+            } else {
+               L[i, j] = 0.0;
+            }
+            j = j + 1;
+         }
+         i = i + 1;
+      }
+      return X;
+   }
+
+   /* CALCUL DE U */
+
+   float[] getU () {
+      float[n,n] X;
+      int i = 0, j = 0;
+      U = matrixCopy(X);
+      while (i < n) {
+         while (j < n) {
+            if (i <= j) {
+               U[i, j] = LU[i, j];
+            } else {
+               U[i, j] = 0.0;
+            }
+            j = j + 1;
+         }
+         i = i + 1;
+      }
+      return X;
+   }
+
+   /* PIVOT */
+
+   float[] getPivot () {
+      int[m] p;
+      int i = 0;
+      while (i < n) {
+         p[i] = piv[i];
+      }
+      return p;
+   }
+
+   /* DETERMINANT */
+
+   float det () {
+      float d = pivsign;
+      int j = 0;
+      while (j < n) {
+         d = d * LU[j, j];
+      }
+      return d;
+   }
+
+   /* INVERSE (ON RESOUT AX = B) */
+
+   float[] inv(float[] B) {
+      int nx = B.width;
+      int i = 0, k = 0;
+      if (B.length != n) {
+         println("the dimensions must match");
+      }
+      if (!this.isNonsingular()) {
+         println("the matrix is singular");
+      }
+
+      X = matrixCopy(B);
+      j = 0;
+      while (k < n) {
+         while (i < n) {
+            while (j < n) {
+               X[i, j] = X[i, j] - X[k, j]*LU[i, k];
+               j =  j + 1;
+            }
+            i = i + 1;
+         }
+         k = k + 1;
+      }
+      i = 0;
+      j = 0;
+      k = n - 1;
+      while (k >= 0) {
+         while (j < nx) {
+            X[k, j] = X[k, j] / LU[k, k];
+            j = j + 1;
+         }
+         j = 0;
+         while (i < k) {
+            while (j < nx) {
+               X[i, j] = X[i, j] - X[k, j]*LU[i, k];
+               j = j + 1;
+            }
+            i = i + 1;
+         }
+         k = k - 1;
+      }
+      return Xmat;
+   }
+}

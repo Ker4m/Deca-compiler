@@ -1,0 +1,23 @@
+#include "NumDeca.decah"
+
+{
+    MatrixSet ms = new MatrixSet();
+    MatrixUtils mu = new MatrixUtils();
+    MatrixOperations mo = new MatrixOperations();
+    int[5,5] matrix;
+    float[5,5] matrix2;
+
+    ms.intSetIdentity(matrix);
+    ms.floatSetIdentity(matrix2);
+
+    matrix[3,2] = 3;
+    matrix2[2,3] = 4.5;
+
+    mo.intMultConst(matrix, 7);
+    mu.intMatrixPrint(matrix);
+
+    mo.floatMultConst(matrix2, 2.0);
+    mu.floatMatrixPrint(matrix2);
+
+
+}

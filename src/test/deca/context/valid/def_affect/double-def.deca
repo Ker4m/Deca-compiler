@@ -1,0 +1,9 @@
+// Description:
+//    Double definition.
+//
+// Resultats:
+//    a et c entiers
+
+{
+    int a, c;
+}

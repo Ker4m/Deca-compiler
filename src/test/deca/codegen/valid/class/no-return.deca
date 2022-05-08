@@ -1,0 +1,23 @@
+// valid test with void type method so return needed
+
+// result :
+//  3
+//
+
+
+
+class Test {
+    int a = 1;
+
+    void noReturn(){
+        a = 3 * a;
+    }
+
+}
+/* Main */
+{
+    Test t = new Test();
+    t.noReturn();
+    println(t.a);
+
+}

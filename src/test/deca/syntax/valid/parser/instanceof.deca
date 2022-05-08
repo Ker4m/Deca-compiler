@@ -1,0 +1,5 @@
+//Test valide instance of
+
+{
+    boolean b = 1 instanceof int;
+}

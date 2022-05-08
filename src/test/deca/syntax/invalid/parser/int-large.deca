@@ -1,0 +1,9 @@
+// Description:
+//    Test invalide du parser.
+//
+// Resultats:
+//    erreur ligne 8
+
+{
+    int a = 2345523657865432456;
+}

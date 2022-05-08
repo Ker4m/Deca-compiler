@@ -1,0 +1,9 @@
+// Description:
+//    Programme valide ayant pour but de tester la multiplication.
+//
+// Resultats:
+//    c=4;
+
+{
+    int c = 2*2;
+}

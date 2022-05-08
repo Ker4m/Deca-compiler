@@ -1,0 +1,7 @@
+// Programme testant la double définition de classes
+
+// Erreur ligne 7
+
+class A {}
+
+class A {}

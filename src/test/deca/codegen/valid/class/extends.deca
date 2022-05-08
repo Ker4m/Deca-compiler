@@ -1,0 +1,18 @@
+// Description:
+//    Programme valide ayant pour but de tester l'heritage de maniere simple.
+//    Le type B peut accéder au champ a de la classe A.
+//
+// Resultats:
+//    2
+//
+
+class A{
+    int a = 2;
+}
+
+class B extends A{}
+
+{
+    B b = new B();
+    println(b.a);
+}

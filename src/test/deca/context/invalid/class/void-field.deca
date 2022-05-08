@@ -1,0 +1,5 @@
+// Programme testant la déclaration d'un field void
+
+class A {
+    void a;
+}

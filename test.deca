@@ -1,0 +1,9 @@
+{
+    boolean b;
+    if(b=false){
+        print("erreur");
+
+    } else {
+        print("ok");
+    }
+}

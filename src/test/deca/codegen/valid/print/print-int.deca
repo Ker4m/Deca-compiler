@@ -1,0 +1,11 @@
+// Description:
+//    Programme minimaliste utilisant print.
+//
+// Resultats:
+//    2
+
+{
+    int a;
+    a = 2;
+    print(a);
+}

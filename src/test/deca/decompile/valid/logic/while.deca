@@ -1,0 +1,13 @@
+// Description:
+//    Programme valide ayant pour but de tester le while.
+//
+// Resultats:
+//    i=5;
+
+{
+    int i=1;
+    
+    while(i<5){
+        i=i+1;
+    }
+}

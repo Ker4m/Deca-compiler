@@ -1,0 +1,8 @@
+//Test invalide de not.
+//erreur ligne 5
+
+{
+    if(!6){
+        println("pas boolean!!");
+    }
+}

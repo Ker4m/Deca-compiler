@@ -1,0 +1,10 @@
+// Description:
+//    Programme valide ayant pour but de tester la comparaison sup.
+//
+// Resultats:
+//    c=true;
+
+{
+    int a = 2;
+    boolean c = (2>1);
+}

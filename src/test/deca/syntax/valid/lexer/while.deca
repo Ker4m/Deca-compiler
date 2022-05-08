@@ -1,0 +1,9 @@
+//Programme valide testant while.
+
+{
+    int a = 0;
+    while(a<1){
+        println("ok");
+        a=a+1;
+    }
+}

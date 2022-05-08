@@ -1,0 +1,14 @@
+class Test {
+
+    void test(){
+        int[5,5] mat;
+        mat[2,4] = 73;
+        println(mat[2,4]);
+    }
+    
+}
+
+{
+    Test t = new Test();
+    t.test();
+}

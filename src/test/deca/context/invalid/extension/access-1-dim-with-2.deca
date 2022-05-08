@@ -1,0 +1,6 @@
+// Programme testant l'accès à un tableau à une dimension avec 2 arguments
+
+{
+    int[4] tab;
+    tab[1,2] = 4;
+}

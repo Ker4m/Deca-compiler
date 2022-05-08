@@ -1,0 +1,9 @@
+// Description:
+//    Programme minimaliste utilisant println.
+//
+// Resultats:
+//    2.3
+
+{
+    println(2.3);
+}

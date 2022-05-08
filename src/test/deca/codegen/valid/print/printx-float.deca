@@ -1,0 +1,9 @@
+// Description:
+//    Programme minimaliste utilisant printx.
+//
+// Resultats:
+//    2.3
+
+{
+    printx(2.3);
+}

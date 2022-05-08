@@ -1,0 +1,10 @@
+// Description:
+//    Programme valide ayant pour but de tester le non logique.
+//
+// Resultats:
+//    b=true;
+
+{
+    boolean b = !true;
+    b = !b;
+}

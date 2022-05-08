@@ -1,0 +1,9 @@
+// Programme testant de redéfinir une méthode avec un type différent
+
+class A {
+    void method() {}
+}
+
+class B extends A {
+    int method() {}
+}

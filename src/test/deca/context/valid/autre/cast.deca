@@ -1,0 +1,15 @@
+class A{
+
+}
+
+class B extends A {
+
+}
+
+{
+    A t = new B();
+    B u = (B) (t);
+
+    float x = 1.4;
+    int c = (int) (x);
+}

@@ -1,0 +1,9 @@
+// Description:
+//    Affectation d'un flottant.
+//
+// Resultats:
+//    a = 3.2
+
+{
+    float a = 3.2;
+}

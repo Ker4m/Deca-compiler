@@ -1,0 +1,14 @@
+//Programme valide tableaux.
+
+//Programme valide testant les tableaux.
+
+{
+    int[3+2] list;
+    int[2 * 2 + 1 - 4 + 10] tab;
+    int j = 1;
+
+    tab[j] = 7;
+
+    list[j] = tab[j];
+    print(list[j]);
+}

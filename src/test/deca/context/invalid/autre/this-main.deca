@@ -1,0 +1,9 @@
+// Description:
+//    Programme invalide.
+//
+// Resultats:
+//    erreur ligne 8
+
+{
+    this;
+}

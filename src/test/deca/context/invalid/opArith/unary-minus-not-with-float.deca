@@ -1,0 +1,10 @@
+// Description:
+//    Programme invalide ayant pour but de tester le unary minus avec un tableau.
+//
+// Resultats:
+//    2 mod 0.5
+
+{
+    int[1] tab;
+    float c = -tab;
+}

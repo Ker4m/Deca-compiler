@@ -1,0 +1,10 @@
+//Programme valide testant if.
+
+{
+    if(true){
+        println("ok");
+    }
+    else{
+        println("erreur");
+    }
+}

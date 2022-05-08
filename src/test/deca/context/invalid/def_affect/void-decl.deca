@@ -1,0 +1,9 @@
+// Description:
+//    Programme invalide.
+//
+// Resultats:
+//    erreur ligne 13
+
+{
+    void a;
+}

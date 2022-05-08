@@ -1,0 +1,8 @@
+// Programme testant le not
+
+{
+    boolean bool = !true;
+    if (!bool) {
+        print("ok");
+    }
+}

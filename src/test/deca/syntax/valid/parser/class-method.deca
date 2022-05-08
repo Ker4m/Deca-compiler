@@ -1,0 +1,13 @@
+// Description:
+//    Programme valide ne contenant une classe à un attribut et une methode.
+//
+// Resultats:
+//    classe A avec un champs et une methode.
+
+class A{
+    int a;
+
+    void printA(){
+        println(this.a);
+    }
+}

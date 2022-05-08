@@ -1,0 +1,5 @@
+{
+    while (false || false) {
+        println("pas ok");
+    }
+}

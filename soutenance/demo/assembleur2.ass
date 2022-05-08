@@ -1,0 +1,37 @@
+	TSTO #5
+	BOV pile_pleine
+	ADDSP #3
+	LOAD #null, R0
+	STORE R0, 1(GB)
+	LOAD code.Object.equals, R0
+	STORE R0, 2(GB)
+	LOAD #0x1.2309cep43, R2
+	STORE R2, 3(GB)
+	LOAD 3(GB), R2
+	LOAD 3(GB), R3
+	MUL R3, R2
+	BOV arith_overflow
+	LOAD 3(GB), R3
+	MUL R3, R2
+	BOV arith_overflow
+	LOAD R2, R1
+	WFLOAT
+	HALT
+code.Object.equals:
+	PUSH R2
+	PUSH R3
+	LOAD -2(LB), R2
+	LOAD -3(LB), R3
+	CMP R2, R3
+	SEQ R0
+	POP R2
+	POP R3
+	RTS
+pile_pleine:
+	WSTR "Error: stack overflow."
+	WNL
+	ERROR
+arith_overflow:
+	WSTR "Error: arithmetique overflow"
+	WNL
+	ERROR

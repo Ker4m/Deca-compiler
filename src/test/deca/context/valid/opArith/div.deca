@@ -1,0 +1,9 @@
+// Description:
+//    Programme valide ayant pour but de tester la division.
+//
+// Resultats:
+//    c=1;
+
+{
+    int c = 2/2;
+}

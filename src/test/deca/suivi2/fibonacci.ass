@@ -1,0 +1,49 @@
+	TSTO #5
+	BOV pile_pleine
+	ADDSP #5
+; start main program
+; Main program
+; Declaration des variables globales:
+	LOAD #0, R2
+	STORE R2, 3(GB)
+	LOAD #1, R2
+	STORE R2, 4(GB)
+	LOAD #1, R2
+	STORE R2, 5(GB)
+	LOAD #0, R2
+	STORE R2, 6(GB)
+	LOAD #10, R2
+	STORE R2, 7(GB)
+; Beginning of main instructions:
+	BRA endWhile_0
+startWhile_0:
+	LOAD 3(GB), R1
+	WINT
+	WNL
+	LOAD 3(GB), R2
+	LOAD 4(GB), R3
+	ADD R3, R2
+	STORE R2, 5(GB)
+	LOAD 4(GB), R2
+	STORE R2, 3(GB)
+	LOAD 5(GB), R2
+	STORE R2, 4(GB)
+	LOAD 6(GB), R2
+	LOAD #1, R3
+	ADD R3, R2
+	STORE R2, 6(GB)
+endWhile_0:
+	LOAD 6(GB), R2
+	LOAD 7(GB), R3
+	CMP R3, R2
+	BLT startWhile_0
+	HALT
+; end main program
+pile_pleine:
+	WSTR "Error: stack overflow."
+	WNL
+	ERROR
+input_error:
+	WSTR "Error : wrong input"
+	WNL
+	ERROR

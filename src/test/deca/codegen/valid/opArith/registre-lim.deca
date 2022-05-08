@@ -1,0 +1,10 @@
+// Test sur des sommes imbriquées pour atteindre les 16 registres
+//
+//Résultat
+//  34
+
+{
+        int z = (1+(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+(1+1)+1)+1)+1)+1)+1)+1)+1)+1)+1)+1)+1)+1)+1)+1)+1)+1) ;
+        println(z);
+
+}

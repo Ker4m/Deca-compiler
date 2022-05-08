@@ -1,0 +1,11 @@
+// Description:
+//    Programme minimaliste utilisant une concatenation 
+//    de'une chaine et d'un flottant comme parametre de printx.
+//
+// Resultats:
+//    Hello2.3
+
+{
+    float a = 2.3;
+    printx("Hello", a);
+}

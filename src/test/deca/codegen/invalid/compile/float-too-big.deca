@@ -1,0 +1,10 @@
+// Description:
+//    Programme invalide ayant pour but de tester l'affectation d'un nombre trop grand en flottant.
+//
+// Resultats:
+//    Error: arithmetique overflow quand on lance ima 
+
+{
+    float i = 1000000000000001.0;
+    float j = i * i * i * i * i * i * i * i;
+}

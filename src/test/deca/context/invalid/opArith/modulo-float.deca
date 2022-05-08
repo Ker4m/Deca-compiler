@@ -1,0 +1,9 @@
+// Description:
+//    Programme valide ayant pour but de tester le modulo avec un flottant.
+//
+// Resultats:
+//    2 mod 0.5
+
+{
+    float c = 2%0.5;
+}
